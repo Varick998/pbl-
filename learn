@@ -1,0 +1,2017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZEPHRA | Learn</title>
+ 
+    <!-- Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+ 
+    <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+ 
+ 
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+ 
+  <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:wght@300;400;700&display=swap" rel="stylesheet">
+ 
+    <style>
+      /* navbar */
+    .navbar-nav .nav-link{
+    color: white;
+    transition: 0.3s;
+    position: relative;
+    }
+
+
+    .navbar-nav .nav-link:hover{
+    color: #ffc107;
+    }
+
+
+   .navbar-nav .nav-link.active{
+    color: #ffc107 !important;
+    }
+ 
+    .dropdown-item{
+        transition: 0.3s;
+        color: #ffc107;
+    }
+    .dropdown-item:hover{
+        background-color: #ffc107;
+        color: white;
+    }
+      /* section 1 */
+       .inria-serif-regular {
+            font-family: "Inria Serif", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        .hero_container{
+            min-height: 100vh;
+            background: linear-gradient(rgba(23, 14, 0, 0.65), rgba(19, 12, 0, 0.65)), url("pbl_image/learn_hero_city.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            overflow: visible;
+            position: relative;
+        }
+ 
+        .hero_text{
+            padding: 12px;
+            text-align: left;
+            position: absolute;
+            left: 2%;
+            top: 100%;
+            transform: translate(0%, -100%);
+            width: 55%;
+        }
+             
+        .inria-serif-light-italic {
+            font-family: "Inria Serif", serif;
+            font-weight: 300;
+            font-style: italic;
+        }
+ 
+        .learn_card{
+            background-color: rgb(245, 239, 232);
+            padding: 70px 60px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-top: 90px;
+            position: relative;
+            z-index: 5;
+            width: 100%;
+        }
+ 
+        .learn_image{
+            height: 500px;
+            width: 100%;
+            max-width: 460px;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+ 
+        .learn_card h2 {
+            font-size: 2.4rem;
+        }
+ 
+        .learn_card p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+ 
+        .container_waste{
+            max-width: 1400px;
+        }
+ 
+        @media screen and (max-width: 991px) {
+            .learn_card {
+                padding: 50px 40px;
+            }
+            .learn_image {
+                margin-top: 30px;
+                max-width: 380px;
+            }
+            
+            .hero_text{
+                
+                margin-top: 60px;
+            }
+            .navbar-nav .nav-link{
+                color: #ffffff;
+                transition: 0.3s;
+                position: relative;
+                text-align: center;
+            }
+        }
+        @media screen and (max-width: 991px) {
+
+            .hero_text{
+                position: static;
+                transform: none;
+                width: 100%;
+                margin-top: 60px;
+                padding: 20px;
+                text-align: left;
+            }
+
+        }
+        @media screen and (max-width: 768px) {
+            .learn_card {
+                padding: 35px 25px;
+                margin-top: -50px;
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+            .learn_image {
+                margin-top: 24px;
+                max-width: 100%;
+            }
+            .learn_card h2 {
+                font-size: 1.8rem;
+            }
+            .learn_card p {
+                font-size: 1rem;
+            }
+        }
+ 
+    /* Section 3 */
+    .three-r-section{
+      background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("images/3rsection4.png");
+      background-size: cover;
+      background-position: center;
+      padding: 80px 0;
+      margin-top: 130px;
+    }
+ 
+    .section-title{
+      font-family: 'inria serif', serif;
+      font-size: 3rem;
+      font-weight: 600;
+      color: white;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+ 
+    .section-title span{
+      color: #ffc107;
+    }
+ 
+    .card-3r{
+      border: none;
+      border-radius: 15px;
+      overflow:hidden;
+      transition: 0.3s ease;
+      height: 100%;
+    }
+ 
+    .card-3r:hover{
+      transform: translateY(-8px);
+    }
+ 
+    .card-3r img{
+      height: 220px;
+      object-fit: cover;
+    }
+ 
+    .card-body{
+      padding: 28px;
+      text-align: center;
+    }
+ 
+    .card-title{
+      font-family: 'inria serif', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+      color: #222;
+    }
+ 
+    .card-text{
+      color: #666;
+      line-height: 1.7;
+      font-size: 15px;
+    }
+ 
+    @media (max-width: 992px){
+      .section-title{
+        font-size: 2.3rem;
+      }
+    }
+ 
+    @media (max-width: 768px){
+      .section-title{
+        font-size: 2rem;
+      }
+    }
+    /* section 4 */
+        .waste-section {
+      padding: 80px 0;
+    }
+ 
+    .waste-image {
+      border-radius: 20px;
+      overflow: hidden;
+      height: 100%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+ 
+    .waste-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+ 
+    .section-title {
+      font-family: 'Inria Serif', serif;
+      font-size: 3rem;
+      color: #4a3f39;
+      margin-bottom: 25px;
+      font-weight: 600;
+    }
+ 
+    .section-text {
+      font-size: 15px;
+      line-height: 1.9;
+      color: #777;
+      margin-bottom: 20px;
+    }
+ 
+    .waste-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      margin-bottom: 40px;
+    }
+ 
+    .icon-box {
+      min-width: 55px;
+      height: 55px;
+      border-radius: 14px;
+      background: rgba(139, 195, 74, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+ 
+    .icon-box i {
+      font-size: 1.8rem;
+      color: #8bc34a;
+    }
+ 
+    .waste-card h5 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #5b514b;
+      margin-bottom: 8px;
+    }
+ 
+    .waste-card p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #7b7b7b;
+      margin: 0;
+    }
+ 
+    @media (max-width: 991px) {
+      .section-title {
+        font-size: 2.3rem;
+        margin-top: 35px;
+      }
+    }
+ 
+    /* Section 5 */
+    .effects-section{
+      padding:100px 0;
+    }
+ 
+    .small-text{
+      font-size:14px;
+      color:#464529;
+      margin-bottom:10px;
+    }
+ 
+    .main-title{
+      font-family:'Inria Serif', serif;
+      font-size:72px;
+      font-weight:600;
+      line-height:0.9;
+      color:oklch(44.718% 0.08162 90.097);
+      margin-bottom:25px;
+    }
+ 
+    .main-title span{
+      color:#ffc107;
+      font-style:italic;
+      display:block;
+    }
+ 
+    .description{
+      color:#555;
+      font-size:15px;
+      line-height:1.8;
+      max-width:520px;
+    }
+ 
+ 
+    .custom-accordion .accordion-item{
+      border:2px solid #6d633d;
+      border-radius:10px !important;
+      overflow:hidden;
+      margin-bottom:20px;
+      background:transparent;
+      transition: 0.3s;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    }
+ 
+    .custom-accordion .accordion-button{
+      background:transparent;
+      font-size:20px;
+      font-weight:600;
+      color:#4d4735;
+      padding:22px 25px;
+      box-shadow:none;
+      position:relative;
+    }
+ 
+    .custom-accordion .accordion-button:not(.collapsed){
+      background:transparent;
+      color:#4d4735;
+      box-shadow:none;
+    }
+ 
+   
+    .custom-accordion .accordion-button::after{
+      display:none;
+    }
+ 
+   
+    .accordion-icon{
+      width:40px;
+      height:40px;
+      background:#ffc107;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-left:auto;
+      flex-shrink:0;
+    }
+    .accordion-item:hover {
+      transform: translateY(-10px);
+    }
+    .accordion-icon i{
+      font-size:20px;
+      color:#2f2a1f;
+    }
+ 
+    .accordion-button:not(.collapsed) .accordion-icon i{
+      transform:rotate(180deg);
+    }
+ 
+    .accordion-body{
+      color:#555;
+      line-height:1.8;
+      font-size:15px;
+      padding:0 25px 25px;
+
+    }
+ 
+    @media(max-width:991px){
+ 
+      .main-title{
+        font-size:55px;
+      }
+ 
+      .left-content{
+        margin-bottom:50px;
+      }
+    }
+ 
+    @media(max-width:768px){
+ 
+      .main-title{
+        font-size:42px;
+      }
+ 
+      .custom-accordion .accordion-button{
+        font-size:18px;
+      }
+    }
+ 
+    /* footer */
+      .inria-serif-light {
+            font-family: "Inria Serif", serif;
+            font-weight: 300;
+            font-style: normal;
+        }
+ 
+        .inria-serif-regular {
+            font-family: "Inria Serif", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+ 
+        .inria-serif-bold {
+            font-family: "Inria Serif", serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+ 
+        .inria-serif-light-italic {
+            font-family: "Inria Serif", serif;
+            font-weight: 300;
+            font-style: italic;
+        }
+ 
+        .inria-serif-regular-italic {
+            font-family: "Inria Serif", serif;
+            font-weight: 400;
+            font-style: italic;
+        }
+ 
+        .inria-serif-bold-italic {
+            font-family: "Inria Serif", serif;
+            font-weight: 700;
+            font-style: italic;
+        }
+ 
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+ 
+        @media screen and (max-width:768px){
+            .footer_session{
+                margin-top: 25px;
+            }
+ 
+            .hero_container{
+                margin-bottom: 75px;
+            }
+        }
+
+    .nav-tabs-learn .nav-link-learn{
+      border:none;
+      color:#555;
+      font-weight:600;
+      padding:12px 18px;
+    }
+ 
+    .nav-tabs-learn .nav-link-learn.active{
+      color:#22c55e;
+      border-bottom:3px solid #22c55e;
+      background:white;
+    }
+ 
+    .video-card{
+      border:none;
+      border-radius:20px;
+      overflow:hidden;
+      transition:.3s;
+      box-shadow:0 5px 15px rgba(0,0,0,0.08);
+      height:100%;
+    }
+ 
+    .video-card:hover{
+      transform:translateY(-5px);
+    }
+ 
+    .thumbnail{
+      position:relative;
+    }
+ 
+    .thumbnail img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+    }
+ 
+    .play-btn{
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      width:60px;
+      height:60px;
+      border:none;
+      border-radius:50%;
+      background:rgba(255,255,255,.9);
+      color:#22c55e;
+      font-size:1.4rem;
+    }
+ 
+    .creator img{
+      width:45px;
+      height:45px;
+      object-fit:cover;
+      border-radius:50%;
+    }
+ 
+    .watch-btn{
+      margin-top:auto;
+    }
+    </style>
+</head>
+<body style="font-family: 'Inria Serif', serif; background-color:white" id="Learn">
+        <!-- Responsive Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark pt-3" style="padding-top: 20px; position: fixed; top: 0; width: 100%; z-index: 999; background-color: rgba(0, 0, 0, 0.267);">
+      <div class="container-fluid px-4 px-lg-5">
+          
+          <a href="#" class="navbar-brand fw-bold fs-2">
+              <img src="pbl_image/logo.png" alt="logo" style="width: auto; height: clamp(30px, 3vw, 50px);">
+          </a>
+          
+          <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+
+          
+          <div class="collapse navbar-collapse" id="navMenu">
+              <ul class="navbar-nav mx-auto" style="gap: 8px;">
+                  <li class="nav-item"><a class="nav-link px-lg-3" href="index.html">Home</a></li>
+                  <li class="nav-item"><a class="nav-link px-lg-3 active" href="learn.html">Learn</a></li>
+                  <li class="nav-item"><a class="nav-link px-lg-3" href="aboutus.html">About Us</a></li>
+                  <li class="nav-item"><a class="nav-link px-lg-3" href="contact.html">Contact Us</a></li>
+                  <li class="nav-item"><a class="nav-link px-lg-3" href="solution.html">Solutions</a></li>
+              </ul>
+
+              <div class="d-flex align-items-center justify-content-center mt-3 mt-lg-0">
+              
+                  <input class="form-control rounded-pill border-0 me-3 d-none d-lg-block" type="text" placeholder="Search" style="width: min(260px, 90vw); height: 36px; background:white">
+                  
+                  <div class="dropdown">
+                      <a href="#" class="text-white text-decoration-none" data-bs-toggle="dropdown">
+                          <i class="bi bi-person-circle fs-1"></i>
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end p-3 border-0 shadow rounded-4" style="width: 260px;">
+                          <li><a class="dropdown-item rounded-3 py-3 d-flex align-items-center gap-3" href="#"><i class="bi bi-person"></i> Profile</a></li>
+                          <li><a class="dropdown-item rounded-3 py-3 d-flex align-items-center gap-3" href="#"><i class="bi bi-chat"></i> Community</a></li>
+                          <li><a class="dropdown-item rounded-3 py-3 d-flex align-items-center gap-3" href="#"><i class="bi bi-gear"></i> Settings</a></li>
+                          <li><a class="dropdown-item rounded-3 py-3 d-flex align-items-center gap-3" href="#"><i class="bi bi-info-circle"></i> Help Center</a></li>
+                          <li><a class="dropdown-item rounded-3 py-3 d-flex align-items-center gap-3" href="#"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </nav>
+
+    <div class="container-fluid d-flex flex-column text-white hero_container">
+        <div class="hero_text">
+            <h1 class="display-4 display-4 mb-3 inria-serif-regular">Understanding <br class="d-md-none"><span style="color:#ffc107;">Waste Management</span></h1>
+            <p class="inria-serif-regular">Learn the fundamental concepts of waste management, including its importance, types of waste, and the environmental impacts of improper disposal. This page provides essential knowledge needed to better understand waste-related issues.</p>
+        </div>
+    </div>
+
+    <div class="container container_waste">
+      <div class="learn_card" data-aos="fade-up" data-aos-duration="800">
+        <div class="row align-items-center g-5">
+ 
+          <div class="col-lg-7">
+            <h2 class="mb-4 inria-serif-regular"> What is<span class="inria-serif-light-italic" style="color: #c5a059;"> waste management? </span></h2>
+           
+            <p class="fw-bold mb-2" style="color: #c5a059;">Definition</p>
+ 
+            <p class="mb-4"> Waste management is the process of collecting, sorting, transporting, recycling, treating, and disposing of waste in a safe and efficient way. It also includes monitoring waste to reduce pollution and protect the environment and public health.</p>
+           
+            <p class="fw-bold mb-2" style="color: #c5a059;">Importance of Proper Waste Disposal</p>
+ 
+            <p>Proper waste disposal helps reduce environmental pollution, prevent health risks, conserve natural resources, and decrease the amount of waste sent to landfills. It also supports recycling and sustainable practices, creating cleaner and healthier communities for the future.</p>
+ 
+          </div>
+ 
+          <div class="col-lg-5 text-center">
+            <img src="pbl_image/learn_workers.png" alt="Workers managing waste" class="learn_image img-fluid">
+          </div>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- section 2 -->
+       <section class="waste-section">
+  <div class="container">
+ 
+    <div class="row align-items-center g-5">
+ 
+      <!-- left -->
+      <div class="col-lg-4">
+        <div class="waste-image">
+          <img
+            src="pbl_image/learn_hand_with_plastic.png"
+            alt="Waste Image"
+          />
+        </div>
+      </div>
+ 
+      <!-- right -->
+      <div class="col-lg-8">
+ 
+        <h1 class="section-title2">Types of Waste</h1>
+ 
+        <p class="section-text">
+          Waste is piling up around us every day—from our homes, schools,
+          and cities—and it continues to grow as populations and consumption
+          increase. This rising volume of waste puts pressure on the environment
+          and makes proper management more important than ever.
+        </p>
+ 
+        <p class="section-text">
+          However, not all waste is the same. Different types of waste behave
+          differently and require specific methods of handling and disposal.
+          In general, waste can be divided into four main categories:
+          biodegradable, non-biodegradable, recyclable, and hazardous.
+        </p>
+ 
+        <!-- Waste Types -->
+        <div class="row mt-5">
+ 
+          <div class="col-md-6">
+            <div class="waste-card">
+ 
+              <div class="icon-box">
+                <i class="bi bi-tree-fill"></i>
+              </div>
+ 
+              <div>
+                <h5>Biodegradable Waste</h5>
+                <p>
+                  Organic materials such as food scraps and leaves that
+                  decompose naturally and can be composted.
+                </p>
+              </div>
+ 
+            </div>
+          </div>
+ 
+          <div class="col-md-6">
+            <div class="waste-card">
+ 
+              <div class="icon-box">
+                <i class="bi bi-cup-straw"></i>
+              </div>
+ 
+              <div>
+                <h5>Non-biodegradable Waste</h5>
+                <p>
+                  Materials like plastics and metals that do not break down
+                  easily and can remain in the environment for a long time.
+                </p>
+              </div>
+ 
+            </div>
+          </div>
+ 
+          <div class="col-md-6">
+            <div class="waste-card">
+ 
+              <div class="icon-box">
+                 <i class="bi bi-recycle"></i>
+              </div>
+ 
+              <div>
+                <h5>Recyclable Waste</h5>
+                <p>
+                  Items such as paper, glass, and plastic that can be
+                  processed and turned into new products.
+                </p>
+              </div>
+ 
+            </div>
+          </div>
+ 
+          <div class="col-md-6">
+            <div class="waste-card">
+ 
+              <div class="icon-box">
+                <i class="bi bi-battery-charging"></i>
+              </div>
+ 
+              <div>
+                <h5>Hazardous Waste</h5>
+                <p>
+                  Dangerous materials like batteries and chemicals that
+                  require special handling to prevent harm.
+                </p>
+              </div>
+ 
+            </div>
+          </div>
+ 
+        </div>
+ 
+      </div>
+    </div>
+  </div>
+</section>
+    
+    <!-- Section 3 -->
+     <section class="three-r-section">
+    <div class="container">
+ 
+      <h1 class="section-title" style="color: white;">
+        Embrace The <span>3rs</span> for a Cleaner Planet
+      </h1>
+ 
+      <div class="row g-4">
+ 
+        <!-- Reduce -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card card-3r shadow-lg">
+            <img src="pbl_image/learn_reduce.png" class="card-img-top" alt="Reduce">
+ 
+             <div class="card-body">
+              <h3 class="card-title">Reduce</h3>
+ 
+              <p class="card-text">Reducing means using fewer materials and avoiding unnecessary waste in daily life. Simple actions such as limiting single-use plastics, buying only what is needed, and choosing reusable products can help reduce pollution and conserve natural resources.</p>
+            </div>
+          </div>
+        </div>
+ 
+        <!-- Reuse -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card card-3r shadow-lg">
+            <img src="pbl_image/learn_reuse.png" class="card-img-top" alt="Reuse">
+ 
+            <div class="card-body">
+              <h3 class="card-title">Reuse</h3>
+ 
+              <p class="card-text">Reusing means using items again instead of throwing them away after one use. Reusable bags, bottles, containers, and donated items help reduce waste while saving materials and energy needed to produce new products.</p>
+            </div>
+          </div>
+        </div>
+ 
+        <!-- Recycle -->
+        <div class="col-lg-4 col-md-6 mx-md-auto">
+          <div class="card card-3r shadow-lg">
+            <img src="pbl_image/learn_recycle.png" class="card-img-top" alt="Recycle" >
+ 
+            <div class="card-body">
+              <h3 class="card-title">Recycle</h3>
+ 
+              <p class="card-text">Recycling is the process of collecting and turning waste materials such as paper, plastic, glass, and metal into new products. Recycling helps reduce landfill waste, conserve resources, save energy, and protect the environment.
+              </p>
+            </div>
+          </div>
+        </div>
+ 
+      </div>
+    </div>
+     </section>
+
+     <!-- section 4 -->
+    <section class="effects-section">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6 left-content">
+ 
+                <p class="small-text">How mismanaged waste impacts our environment and health</p>
+               
+                <h1 class="main-title">Effect on poor <span>Waste Management</span></h1>
+               
+                <p class="description">Poor waste management can lead to serious environmental and health problems, affecting both natural ecosystems and human communities. When waste is not handled properly, it can pollute the air, water, and land, creating long-term damage.</p>
+            </div>
+           
+            <div class="col-lg-6">
+                <div class="accordion custom-accordion" id="wasteAccordion">
+                   
+                    <!-- Item 1 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">Pollution
+                                <div class="accordion-icon"><i class="bi bi-chevron-down"></i></div>
+                            </button>
+                        </h2>
+                       
+                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#wasteAccordion">
+                            <div class="accordion-body">Improper waste disposal pollutes rivers, soil, and the atmosphere,harming both people and the environment.</div>
+                        </div>
+                    </div>
+                   
+                    <!-- Item 2 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">Health Problems
+                                <div class="accordion-icon"><i class="bi bi-chevron-down"></i>
+                                </div>
+                            </button>
+                        </h2>
+                       
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#wasteAccordion">
+                             <div class="accordion-body">Waste buildup can spread bacteria and diseases,causing serious health risks in communities.
+                             </div>
+                        </div>
+                    </div>
+                   
+                    <!-- Item 3 -->
+                     <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"> Climate Change
+ 
+                <div class="accordion-icon">
+                  <i class="bi bi-chevron-down"></i>
+                </div>
+ 
+              </button>
+ 
+            </h2>
+ 
+            <div id="collapseThree"
+              class="accordion-collapse collapse"
+              data-bs-parent="#wasteAccordion">
+ 
+              <div class="accordion-body">
+                Decomposing waste releases greenhouse gases like methane,
+                contributing to global warming and climate change.
+              </div>
+ 
+            </div>
+ 
+          </div>
+ 
+          <!-- Item 4 -->
+          <div class="accordion-item">
+ 
+            <h2 class="accordion-header">
+ 
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"> Harm to Animals and Marine Life
+ 
+                <div class="accordion-icon">
+                  <i class="bi bi-chevron-down"></i>
+                </div>
+ 
+              </button>
+ 
+            </h2>
+ 
+            <div id="collapseFour"
+              class="accordion-collapse collapse"
+              data-bs-parent="#wasteAccordion">
+ 
+              <div class="accordion-body">Plastic and toxic waste can injure or kill animals,especially marine life in oceans and rivers.
+              </div>
+ 
+            </div>
+ 
+          </div>
+ 
+        </div>
+ 
+      </div>
+ 
+    </div>
+ 
+  </div>
+ 
+    </section>
+
+    <section>
+        <div class="container pb-5">
+ 
+            <!-- tabs-->
+            <ul class="nav nav-tabs-learn flex-wrap mb-4 justify-content-center ">
+        
+                <li class="nav-item">
+                    <button class="nav-link-learn active" data-bs-toggle="tab" data-bs-target="#plastic">
+                    <i class="bi bi-recycle me-2"></i>Plastic Waste
+                    </button>
+                </li>
+            
+                <li class="nav-item">
+                    <button class="nav-link-learn" data-bs-toggle="tab" data-bs-target="#paper">
+                    <i class="bi bi-file-earmark-text me-2"></i>Paper Waste
+                    </button>
+                </li>
+            
+                <li class="nav-item">
+                    <button class="nav-link-learn" data-bs-toggle="tab" data-bs-target="#electronic">
+                    <i class="bi bi-cpu me-2"></i>Electronic Waste
+                    </button>
+                </li>
+            
+                <li class="nav-item">
+                    <button class="nav-link-learn" data-bs-toggle="tab" data-bs-target="#glass">
+                    <i class="bi bi-cup-straw me-2"></i>Glass Waste
+                    </button>
+                </li>
+            
+                <li class="nav-item">
+                    <button class="nav-link-learn" data-bs-toggle="tab" data-bs-target="#metal">
+                    <i class="bi bi-gear-wide-connected me-2"></i>Metal Waste
+                    </button>
+                </li>
+            
+                <li class="nav-item">
+                    <button class="nav-link-learn" data-bs-toggle="tab" data-bs-target="#fabric">
+                    <i class="bi bi-bag-heart me-2"></i>Fabric Waste
+                    </button>
+                </li>
+            
+                </ul>
+        
+        <!-- tab content -->
+            <div class="tab-content">
+        
+            <!-- plastic -->
+            <div class="tab-pane fade show active" id="plastic">
+                <div class="row g-4">
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="card video-card">
+                    <div class="thumbnail">
+                        <img src="pbl_image/plastic.png">
+                        <button class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal-plastic-1"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold">Plastic Bottle Plant Pot</h5>
+                        <p class="text-muted">Turn old plastic bottles into aesthetic mini plant holders.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 creator">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="pbl_image/profile2.jpg">
+                            <div>
+                            <div class="fw-semibold">Green Teens</div>
+                            <small class="text-muted">Community</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-sm rounded-pill">Join</button>
+                        </div>
+                        <button class="btn btn-success watch-btn mt-4" data-bs-toggle="modal" data-bs-target="#videoModal-plastic-1">Watch Full Video</button>
+                    </div>
+                    </div>
+                </div>
+        
+                <div class="col-lg-4 col-md-6">
+                    <div class="card video-card">
+                    <div class="thumbnail">
+                        <img src="pbl_image/plastic2.jpg">
+                        <button class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal-plastic-2"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold">Plastic Bag Rope</h5>
+                        <p class="text-muted">Braide old plastic bags into a strong reusable rope.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 creator">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="pbl_image/profile2.jpg">
+                            <div>
+                            <div class="fw-semibold">Eco Crafter</div>
+                            <small class="text-muted">Creator</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-sm rounded-pill">Follow</button>
+                        </div>
+                        <button class="btn btn-success watch-btn mt-4" data-bs-toggle="modal" data-bs-target="#videoModal-plastic-2">Watch Full Video</button>
+                    </div>
+                    </div>
+                </div>
+        
+                <div class="col-lg-4 col-md-6">
+                    <div class="card video-card">
+                    <div class="thumbnail">
+                        <img src="pbl_image/mosiac.jpg">
+                        <button class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal-plastic-3"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold">Bottle Cap Mosaic</h5>
+                        <p class="text-muted">Create colorful art pieces using recycled bottle caps.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 creator">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="pbl_image/profile 4.jpg">
+                            <div>
+                            <div class="fw-semibold">Art Recycle</div>
+                            <small class="text-muted">Campaign</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-sm rounded-pill">Join</button>
+                        </div>
+                        <button class="btn btn-success watch-btn mt-4" data-bs-toggle="modal" data-bs-target="#videoModal-plastic-3">Watch Full Video</button>
+                    </div>
+                    </div>
+                </div>
+        
+                <div class="col-lg-4 col-md-6">
+                    <div class="card video-card">
+                    <div class="thumbnail">
+                        <img src="pbl_image/mirror spoon.jpg">
+                        <button class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal-plastic-4"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold">Plastic Spoon Mirror Frame</h5>
+                        <p class="text-muted">Design an elegant mirror frame using plastic spoons.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 creator">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="pbl_image/queen pfp.jpg">
+                            <div>
+                            <div class="fw-semibold">DIY Queen</div>
+                            <small class="text-muted">Creator</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-sm rounded-pill">Follow</button>
+                        </div>
+                        <button class="btn btn-success watch-btn mt-4" data-bs-toggle="modal" data-bs-target="#videoModal-plastic-4">Watch Full Video</button>
+                    </div>
+                    </div>
+                </div>
+        
+                <div class="col-lg-4 col-md-6">
+                    <div class="card video-card">
+                    <div class="thumbnail">
+                        <img src="pbl_image/sprinkler.png">
+                        <button class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal-plastic-5"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold">Plastic Bottle Sprinkler</h5>
+                        <p class="text-muted">Poke holes in a bottle to make a garden water sprinkler.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 creator">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="pbl_image/profile 5.jpg">
+                            <div>
+                            <div class="fw-semibold">Garden Hacks</div>
+                            <small class="text-muted">Organization</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-sm rounded-pill">Join</button>
+                        </div>
+                        <button class="btn btn-success watch-btn mt-4" data-bs-toggle="modal" data-bs-target="#videoModal-plastic-5">Watch Full Video</button>
+                    </div>
+                    </div>
+                </div>
+        
+                <div class="col-lg-4 col-md-6">
+                    <div class="card video-card">
+                    <div class="thumbnail">
+                        <img src="pbl_image/zipper bag.jpg">
+                        <button class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal-plastic-6"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold">Plastic Zipper Pouch</h5>
+                        <p class="text-muted">Fuse plastic bags to create a waterproof zipper pouch.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 creator">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="pbl_image/profile 6.jpg">
+                            <div>
+                            <div class="fw-semibold">Green Teens</div>
+                            <small class="text-muted">Community</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-sm rounded-pill">Join</button>
+                        </div>
+                        <button class="btn btn-success watch-btn mt-4" data-bs-toggle="modal" data-bs-target="#videoModal-plastic-6">Watch Full Video</button>
+                    </div>
+                    </div>
+                </div>
+        
+                </div>
+            </div>
+        
+        <!-- paper -->
+            <div class="tab-pane fade" id="paper">
+                <div class="row g-4">
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="card video-card">
+                    <div class="thumbnail">
+                        <img src="pbl_image/carboard.png">
+                        <button class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal-paper-1"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold">DIY Cardboard Organizer</h5>
+                        <p class="text-muted">Make a useful desk organizer using recycled cardboard.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 creator">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="pbl_image/papercraft.jpg">
+                            <div>
+                            <div class="fw-semibold">Paper Lab</div>
+                            <small class="text-muted">Creator</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-sm rounded-pill">Follow</button>
+                        </div>
+                        <button class="btn btn-success watch-btn mt-4" data-bs-toggle="modal" data-bs-target="#videoModal-paper-1">Watch Full Video</button>
+                    </div>
+                    </div>
+                </div>
+        
+                <div class="col-lg-4 col-md-6">
+                    <div class="card video-card">
+                    <div class="thumbnail">
+                        <img src="pbl_image/paperplate.jpg">
+                        <button class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal-paper-2"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold">Papier Mache Bowl</h5>
+                        <p class="text-muted">Craft a decorative bowl using old newspapers and glue.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 creator">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="pbl_image/profile 4.jpg">
+                            <div>
+                            <div class="fw-semibold">Art Recycle</div>
+                            <small class="text-muted">Community</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-sm rounded-pill">Join</button>
+                        </div>
+                        <button class="btn btn-success watch-btn mt-4" data-bs-toggle="modal" data-bs-target="#videoModal-paper-2">Watch Full Video</button>
+                    </div>
+                    </div>
+                </div>
+        
+                <div class="col-lg-4 col-md-6">
+                    <div class="card video-card">
+                    <div class="thumbnail">
+                        <img src="pbl_image/seedholder.jpg">
+                        <button class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal-paper-3"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold">Paper Seed Starters</h5>
+                        <p class="text-muted">Make biodegradable pots out of old paper for seedlings.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 creator">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="pbl_image/profile 5.jpg">
+                            <div>
+                            <div class="fw-semibold">Garden Hacks</div>
+                            <small class="text-muted">Organization</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-sm rounded-pill">Join</button>
+                        </div>
+                        <button class="btn btn-success watch-btn mt-4" data-bs-toggle="modal" data-bs-target="#videoModal-paper-3">Watch Full Video</button>
+                    </div>
+                    </div>
+                </div>
+        
+                <div class="col-lg-4 col-md-6">
+                    <div class="card video-card">
+                    <div class="thumbnail">
+                        <img src="pbl_image/recycled paper.jpg">
+                        <button class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal-paper-4"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold">Handmade Recycled Paper</h5>
+                        <p class="text-muted">Create new sheets of paper from your old scrap paper.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 creator">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="pbl_image/papercraft.jpg">
+                            <div>
+                            <div class="fw-semibold">Paper Lab</div>
+                            <small class="text-muted">Creator</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-sm rounded-pill">Follow</button>
+                        </div>
+                        <button class="btn btn-success watch-btn mt-4" data-bs-toggle="modal" data-bs-target="#videoModal-paper-4">Watch Full Video</button>
+                    </div>
+                    </div>
+                </div>
+        
+                <div class="col-lg-4 col-md-6">
+                    <div class="card video-card">
+                    <div class="thumbnail">
+                        <img src="pbl_image/3d.png">
+                        <button class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal-paper-5"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold">Newspaper Wall Art</h5>
+                        <p class="text-muted">Roll up old newspapers to create stunning 3D wall art.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 creator">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="pbl_image/queen pfp.jpg">
+                            <div>
+                            <div class="fw-semibold">DIY Queen</div>
+                            <small class="text-muted">Creator</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-sm rounded-pill">Follow</button>
+                        </div>
+                        <button class="btn btn-success watch-btn mt-4" data-bs-toggle="modal" data-bs-target="#videoModal-paper-5">Watch Full Video</button>
+                    </div>
+                    </div>
+                </div>
+        
+                <div class="col-lg-4 col-md-6">
+                    <div class="card video-card">
+                    <div class="thumbnail">
+                        <img src="pbl_image/cat.png">
+                        <button class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal-paper-6"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold">Magazine cutout art</h5>
+                        <p class="text-muted">Cut out magazine parts into pieces to form a unique desighn.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 creator">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="pbl_image/profile2.jpg">
+                            <div>
+                            <div class="fw-semibold">Eco Crafter</div>
+                            <small class="text-muted">Creator</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-sm rounded-pill">Follow</button>
+                        </div>
+                        <button class="btn btn-success watch-btn mt-4" data-bs-toggle="modal" data-bs-target="#videoModal-paper-6">Watch Full Video</button>
+                    </div>
+                    </div>
+                </div>
+        
+                </div>
+            </div>
+        
+        <!-- electronic -->
+            <div class="tab-pane fade" id="electronic">
+                <div class="row g-4">
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="card video-card">
+                    <div class="thumbnail">
+                        <img src="pbl_image/art made out of  electronic waste.png">
+                        <button class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal-electronic-1"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold">Creating amazing art from e-waste</h5>
+                        <p class="text-muted">Transform electronic waste into stunning artistic creations.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 creator">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="pbl_image/echo  tech.jpg">
+                            <div>
+                            <div class="fw-semibold">Eco Tech</div>
+                            <small class="text-muted">Organization</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-sm rounded-pill">Join</button>
+                        </div>
+                        <button class="btn btn-success watch-btn mt-4" data-bs-toggle="modal" data-bs-target="#videoModal-electronic-1">Watch Full Video</button>
+                    </div>
+                    </div>
+                </div>
+        
+                <div class="col-lg-4 col-md-6">
+                    <div class="card video-card">
+                    <div class="thumbnail">
+                        <img src="pbl_image/light bub.png">
+                        <button class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal-electronic-2"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold">Reusing waste light bulbs</h5>
+                        <p class="text-muted">Transform old light bulbs into creative and unique DIY projects.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 creator">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="pbl_image/echo  tech.jpg">
+                            <div>
+                            <div class="fw-semibold">Eco Tech</div>
+                            <small class="text-muted">Organization</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-sm rounded-pill">Join</button>
+                        </div>
+                        <button class="btn btn-success watch-btn mt-4" data-bs-toggle="modal" data-bs-target="#videoModal-electronic-2">Watch Full Video</button>
+                    </div>
+                    </div>
+                </div>
+        
+                <div class="col-lg-4 col-md-6">
+                    <div class="card video-card">
+                    <div class="thumbnail">
+                        <img src="pbl_image/electronic ideas.jpg">
+                        <button class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal-electronic-3"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold">DIY ELECTRONIC WASTE IDEAS</h5>
+                        <p class="text-muted">Get inspired with these creative DIY projects using electronic waste.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 creator">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="pbl_image/diynerd.jpg">
+                            <div>
+                            <div class="fw-semibold">DIY Nerd</div>
+                            <small class="text-muted">Creator</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-sm rounded-pill">Follow</button>
+                        </div>
+                        <button class="btn btn-success watch-btn mt-4" data-bs-toggle="modal" data-bs-target="#videoModal-electronic-3">Watch Full Video</button>
+                    </div>
+                    </div>
+                </div>
+        
+                <div class="col-lg-4 col-md-6">
+                    <div class="card video-card">
+                    <div class="thumbnail">
+                        <img src="pbl_image/electronic 2.png">
+                        <button class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal-electronic-4"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold">Trash to Cash!</h5>
+                        <p class="text-muted">Clever Way To Reuse E Waste And Scrape Metal | Recycling Ideas With High Profit $</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 creator">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="pbl_image/echo  tech.jpg">
+                            <div>
+                            <div class="fw-semibold">Eco Tech</div>
+                            <small class="text-muted">Organization</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-sm rounded-pill">Join</button>
+                        </div>
+                        <button class="btn btn-success watch-btn mt-4" data-bs-toggle="modal" data-bs-target="#videoModal-electronic-4">Watch Full Video</button>
+                    </div>
+                    </div>
+                </div>
+        
+                <div class="col-lg-4 col-md-6">
+                    <div class="card video-card">
+                    <div class="thumbnail">
+                        <img src="pbl_image/my edit .png">
+                        <button class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal-electronic-5"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold">DIY ELECTRONIC WASTE IDEAS 2</h5>
+                        <p class="text-muted">Get inspired with these creative DIY projects using electronic waste.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 creator">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="pbl_image/diynerd.jpg">
+                            <div>
+                            <div class="fw-semibold">DIY Nerd</div>
+                            <small class="text-muted">Creator</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-sm rounded-pill">Follow</button>
+                        </div>
+                        <button class="btn btn-success watch-btn mt-4" data-bs-toggle="modal" data-bs-target="#videoModal-electronic-5">Watch Full Video</button>
+                    </div>
+                    </div>
+                </div>
+        
+                <div class="col-lg-4 col-md-6">
+                    <div class="card video-card">
+                    <div class="thumbnail">
+                        <img src="pbl_image/electronic 3.jpg">
+                        <button class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal-electronic-6"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold">DIY e Waste Craft</h5>
+                        <p class="text-muted">Transform electronic waste into useful and creative items.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 creator">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="pbl_image/echo  tech.jpg">
+                            <div>
+                            <div class="fw-semibold">Eco Tech</div>
+                            <small class="text-muted">Organization</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-sm rounded-pill">Join</button>
+                        </div>
+                        <button class="btn btn-success watch-btn mt-4" data-bs-toggle="modal" data-bs-target="#videoModal-electronic-6">Watch Full Video</button>
+                    </div>
+                    </div>
+                </div>
+        
+                </div>
+            </div>
+        
+        
+        <!-- glass -->
+            <div class="tab-pane fade" id="glass">
+                <div class="row g-4">
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="card video-card">
+                    <div class="thumbnail">
+                        <img src="pbl_image/DIY Fall Leaf Mason Jar Candleholder.png">
+                        <button class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal-glass-1"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold">DIY Fall Leaf Mason Jar Candleholder </h5>
+                        <p class="text-muted">Reuse glass jars and turn them into beautiful decorations.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 creator">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="pbl_image/glass pfp.jpg">
+                            <div>
+                            <div class="fw-semibold">Glass Art</div>
+                            <small class="text-muted">Creator</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-sm rounded-pill">Follow</button>
+                        </div>
+                        <button class="btn btn-success watch-btn mt-4" data-bs-toggle="modal" data-bs-target="#videoModal-glass-1">Watch Full Video</button>
+                    </div>
+                    </div>
+                </div>
+        
+                <div class="col-lg-4 col-md-6">
+                    <div class="card video-card">
+                    <div class="thumbnail">
+                        <img src="pbl_image/bottle.png">
+                        <button class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal-glass-2"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold">Bottle Terrarium</h5>
+                        <p class="text-muted">Build a mini garden ecosystem inside an old glass bottle.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 creator">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="pbl_image/profile 5.jpg">
+                            <div>
+                            <div class="fw-semibold">Garden Hacks</div>
+                            <small class="text-muted">Organization</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-sm rounded-pill">Join</button>
+                        </div>
+                        <button class="btn btn-success watch-btn mt-4" data-bs-toggle="modal" data-bs-target="#videoModal-glass-2">Watch Full Video</button>
+                    </div>
+                    </div>
+                </div>
+        
+                <div class="col-lg-4 col-md-6">
+                    <div class="card video-card">
+                    <div class="thumbnail">
+                        <img src="pbl_image/glass mosaic.jpg">
+                        <button class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal-glass-3"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold">Mosaic Picture Frame</h5>
+                        <p class="text-muted">Break colored glass to create a mosaic on old frames.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 creator">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="pbl_image/profile 4.jpg">
+                            <div>
+                            <div class="fw-semibold">Art Recycle</div>
+                            <small class="text-muted">Community</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-sm rounded-pill">Join</button>
+                        </div>
+                        <button class="btn btn-success watch-btn mt-4" data-bs-toggle="modal" data-bs-target="#videoModal-glass-3">Watch Full Video</button>
+                    </div>
+                    </div>
+                </div>
+        
+                <div class="col-lg-4 col-md-6">
+                    <div class="card video-card">
+                    <div class="thumbnail">
+                        <img src="pbl_image/wine glass.jpg">
+                        <button class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal-glass-4"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold">Wine Glass Wind Chime</h5>
+                        <p class="text-muted">Suspend old glassware to make musical wind chimes.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 creator">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="pbl_image/glass pfp.jpg">
+                            <div>
+                            <div class="fw-semibold">Glass Art</div>
+                            <small class="text-muted">Creator</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-sm rounded-pill">Follow</button>
+                        </div>
+                        <button class="btn btn-success watch-btn mt-4" data-bs-toggle="modal" data-bs-target="#videoModal-glass-4">Watch Full Video</button>
+                    </div>
+                    </div>
+                </div>
+        
+                <div class="col-lg-4 col-md-6">
+                    <div class="card video-card">
+                    <div class="thumbnail">
+                        <img src="pbl_image/10tip.png">
+                        <button class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal-glass-5"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold"> 10 Best Ideas from recycled Glass jars</h5>
+                        <p class="text-muted">Explore 10 creative DIY ideas to reuse recycled glass jars for home hacks and decorations.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 creator">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="pbl_image/home pfp.jpg">
+                            <div>
+                            <div class="fw-semibold">Home Hacks</div>
+                            <small class="text-muted">Community</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-sm rounded-pill">Join</button>
+                        </div>
+                        <button class="btn btn-success watch-btn mt-4" data-bs-toggle="modal" data-bs-target="#videoModal-glass-5">Watch Full Video</button>
+                    </div>
+                    </div>
+                </div>
+        
+                <div class="col-lg-4 col-md-6">
+                    <div class="card video-card">
+                    <div class="thumbnail">
+                        <img src="pbl_image/fairy lamp.png">
+                        <button class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal-glass-6"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold">Fairy Light Lamp</h5>
+                        <p class="text-muted">Place string lights inside a jar for a cozy bedroom lamp.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 creator">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="pbl_image/queen pfp.jpg">
+                            <div>
+                            <div class="fw-semibold">DIY Queen</div>
+                            <small class="text-muted">Creator</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-sm rounded-pill">Follow</button>
+                        </div>
+                        <button class="btn btn-success watch-btn mt-4" data-bs-toggle="modal" data-bs-target="#videoModal-glass-6">Watch Full Video</button>
+                    </div>
+                    </div>
+                </div>
+        
+                </div>
+            </div>
+        
+        
+        <!-- Metal -->
+            <div class="tab-pane fade" id="metal">
+                <div class="row g-4">
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="card video-card">
+                    <div class="thumbnail">
+                        <img src="pbl_image/tin pencil holder.png">
+                        <button class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal-metal-1"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold">Tin Can Pen Holder</h5>
+                        <p class="text-muted">Create a colorful pen holder using recycled metal cans.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 creator">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="pbl_image/profile2.jpg">
+                            <div>
+                            <div class="fw-semibold">Eco Crafter</div>
+                            <small class="text-muted">Creator</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-sm rounded-pill">Follow</button>
+                        </div>
+                        <button class="btn btn-success watch-btn mt-4" data-bs-toggle="modal" data-bs-target="#videoModal-metal-1">Watch Full Video</button>
+                    </div>
+                    </div>
+                </div>
+        
+                <div class="col-lg-4 col-md-6">
+                    <div class="card video-card">
+                    <div class="thumbnail">
+                        <img src="pbl_image/cantab bag.png">
+                        <button class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal-metal-2"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold">Soda Tab Bag</h5>
+                        <p class="text-muted">Weave soda can tabs together to make a unique purse.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 creator">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="pbl_image/queen pfp.jpg">
+                            <div>
+                            <div class="fw-semibold">DIY Queen</div>
+                            <small class="text-muted">Creator</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-sm rounded-pill">Follow</button>
+                        </div>
+                        <button class="btn btn-success watch-btn mt-4" data-bs-toggle="modal" data-bs-target="#videoModal-metal-2">Watch Full Video</button>
+                    </div>
+                    </div>
+                </div>
+        
+                <div class="col-lg-4 col-md-6">
+                    <div class="card video-card">
+                    <div class="thumbnail">
+                        <img src="pbl_image/tin can wind chin.png">
+                        <button class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal-metal-3"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold">Tin Can Lanterns</h5>
+                        <p class="text-muted">Poke holes in cans to make beautiful outdoor lanterns.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 creator">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="pbl_image/home pfp.jpg">
+                            <div>
+                            <div class="fw-semibold">Home Hacks</div>
+                            <small class="text-muted">Community</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-sm rounded-pill">Join</button>
+                        </div>
+                        <button class="btn btn-success watch-btn mt-4" data-bs-toggle="modal" data-bs-target="#videoModal-metal-3">Watch Full Video</button>
+                    </div>
+                    </div>
+                </div>
+        
+                <div class="col-lg-4 col-md-6">
+                    <div class="card video-card">
+                    <div class="thumbnail">
+                        <img src="pbl_image/cookie cutter.jpg">
+                        <button class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal-metal-4"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold">Cookie Cutters</h5>
+                        <p class="text-muted">Bend old aluminum cans into custom cookie cutters.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 creator">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="pbl_image/profile2.jpg">
+                            <div>
+                            <div class="fw-semibold">Eco Crafter</div>
+                            <small class="text-muted">Creator</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-sm rounded-pill">Follow</button>
+                        </div>
+                        <button class="btn btn-success watch-btn mt-4" data-bs-toggle="modal" data-bs-target="#videoModal-metal-4">Watch Full Video</button>
+                    </div>
+                    </div>
+                </div>
+        
+                <div class="col-lg-4 col-md-6">
+                    <div class="card video-card">
+                    <div class="thumbnail">
+                        <img src="pbl_image/tin can wind chin.png">
+                        <button class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal-metal-5"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold">Tin Can Wind Chime</h5>
+                        <p class="text-muted">Hang painted cans to create a rustic wind chime.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 creator">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="pbl_image/profile 4.jpg">
+                            <div>
+                            <div class="fw-semibold">Art Recycle</div>
+                            <small class="text-muted">Community</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-sm rounded-pill">Join</button>
+                        </div>
+                        <button class="btn btn-success watch-btn mt-4" data-bs-toggle="modal" data-bs-target="#videoModal-metal-5">Watch Full Video</button>
+                    </div>
+                    </div>
+                </div>
+        
+                <div class="col-lg-4 col-md-6">
+                    <div class="card video-card">
+                    <div class="thumbnail">
+                        <img src="pbl_image/herb can.jpg">
+                        <button class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal-metal-6"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold">Herb Garden Planters</h5>
+                        <p class="text-muted">Paint and label tin cans to create a kitchen herb garden.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 creator">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="pbl_image/profile 5.jpg">
+                            <div>
+                            <div class="fw-semibold">Garden Hacks</div>
+                            <small class="text-muted">Organization</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-sm rounded-pill">Join</button>
+                        </div>
+                        <button class="btn btn-success watch-btn mt-4" data-bs-toggle="modal" data-bs-target="#videoModal-metal-6">Watch Full Video</button>
+                    </div>
+                    </div>
+                </div>
+        
+                </div>
+            </div>
+        
+        
+        
+            <!-- Fabric -->
+            <div class="tab-pane fade" id="fabric">
+                <div class="row g-4">
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="card video-card">
+                    <div class="thumbnail">
+                        <img src="pbl_image/tote bag.png">
+                        <button class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal-fabric-1"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold">Old T-Shirt Tote Bag</h5>
+                        <p class="text-muted">Turn unused clothes into reusable shopping bags.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 creator">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="pbl_image/profile2.jpg">
+                            <div>
+                            <div class="fw-semibold">Eco Crafter</div>
+                            <small class="text-muted">Creator</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-sm rounded-pill">Follow</button>
+                        </div>
+                        <button class="btn btn-success watch-btn mt-4" data-bs-toggle="modal" data-bs-target="#videoModal-fabric-1">Watch Full Video</button>
+                    </div>
+                    </div>
+                </div>
+        
+                <div class="col-lg-4 col-md-6">
+                    <div class="card video-card">
+                    <div class="thumbnail">
+                        <img src="pbl_image/demini pocket.png">
+                        <button class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal-fabric-2"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold">Denim Pocket Organizer</h5>
+                        <p class="text-muted">Cut pockets from old jeans to make a wall organizer.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 creator">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="pbl_image/queen pfp.jpg">
+                            <div>
+                            <div class="fw-semibold">DIY Queen</div>
+                            <small class="text-muted">Creator</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-sm rounded-pill">Follow</button>
+                        </div>
+                        <button class="btn btn-success watch-btn mt-4" data-bs-toggle="modal" data-bs-target="#videoModal-fabric-2">Watch Full Video</button>
+                    </div>
+                    </div>
+                </div>
+        
+                <div class="col-lg-4 col-md-6">
+                    <div class="card video-card">
+                    <div class="thumbnail">
+                        <img src="pbl_image/t-shirt yearn.png">
+                        <button class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal-fabric-3"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold">T-Shirt Yarn Rug</h5>
+                        <p class="text-muted">Strip old t-shirts and braid them into a colorful rug.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 creator">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="pbl_image/home pfp.jpg">
+                            <div>
+                            <div class="fw-semibold">Home Hacks</div>
+                            <small class="text-muted">Community</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-sm rounded-pill">Join</button>
+                        </div>
+                        <button class="btn btn-success watch-btn mt-4" data-bs-toggle="modal" data-bs-target="#videoModal-fabric-3">Watch Full Video</button>
+                    </div>
+                    </div>
+                </div>
+        
+                <div class="col-lg-4 col-md-6">
+                    <div class="card video-card">
+                    <div class="thumbnail">
+                        <img src="pbl_image/charm with scrap.png">
+                        <button class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal-fabric-4"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold">Fabric Scrap Keychains</h5>
+                        <p class="text-muted">Wrap fabric scraps around rings for custom keychains.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 creator">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="pbl_image/profile 4.jpg">
+                            <div>
+                            <div class="fw-semibold">Art Recycle</div>
+                            <small class="text-muted">Community</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-sm rounded-pill">Join</button>
+                        </div>
+                        <button class="btn btn-success watch-btn mt-4" data-bs-toggle="modal" data-bs-target="#videoModal-fabric-4">Watch Full Video</button>
+                    </div>
+                    </div>
+                </div>
+        
+                <div class="col-lg-4 col-md-6">
+                    <div class="card video-card">
+                    <div class="thumbnail">
+                        <img src="pbl_image/makeup remover.png">
+                        <button class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal-fabric-5"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold">Reusable Makeup Pads</h5>
+                        <p class="text-muted">Sew soft fabric squares into eco-friendly makeup removers.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 creator">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="pbl_image/home pfp.jpg">
+                            <div>
+                            <div class="fw-semibold">Home Hacks</div>
+                            <small class="text-muted">Community</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-sm rounded-pill">Join</button>
+                        </div>
+                        <button class="btn btn-success watch-btn mt-4" data-bs-toggle="modal" data-bs-target="#videoModal-fabric-5">Watch Full Video</button>
+                    </div>
+                    </div>
+                </div>
+        
+                <div class="col-lg-4 col-md-6">
+                    <div class="card video-card">
+                    <div class="thumbnail">
+                        <img src="pbl_image/jean scrap.png">
+                        <button class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal-fabric-6"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="fw-bold"> jeans scrap pocket</h5>
+                        <p class="text-muted">Reuse old jeans pockets to create handy wall organizers for small everyday items.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3 creator">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="pbl_image/profile 6.jpg">
+                            <div>
+                            <div class="fw-semibold">Green teen</div>
+                            <small class="text-muted">Community</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-sm rounded-pill">Join</button>
+                        </div>
+                        <button class="btn btn-success watch-btn mt-4" data-bs-toggle="modal" data-bs-target="#videoModal-fabric-6">Watch Full Video</button>
+                    </div>
+                    </div>
+                </div>
+        
+                </div>
+            </div>
+        
+            </div>
+        </div>
+    
+        <!-- modal -->
+        <!-- Plastic Modals -->
+        <div class="modal fade" id="videoModal-plastic-1" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content border-0 rounded-4 overflow-hidden"><div class="modal-body p-0 position-relative"><button type="button" class="btn-close position-absolute end-0 m-3 bg-white" data-bs-dismiss="modal"></button><div class="ratio ratio-16x9"><iframe width="744" height="431" src="https://www.youtube.com/embed/uYYvw0VFSYA" title="🌱 DIY Hydroponic Wonders from Bottles 🌱 Garden Recycle from trash to treasure" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></iframe></div></div></div></div></div>
+        <div class="modal fade" id="videoModal-plastic-2" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content border-0 rounded-4 overflow-hidden"><div class="modal-body p-0 position-relative"><button type="button" class="btn-close position-absolute end-0 m-3 bg-white" data-bs-dismiss="modal"></button><div class="ratio ratio-16x9"><iframe width="915" height="514" src="https://www.youtube.com/embed/3TpN4WT61hU" title="How to Make Rope Out Of Recycled Plastic Bags" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></iframe></div></div></div></div></div>
+        <div class="modal fade" id="videoModal-plastic-3" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content border-0 rounded-4 overflow-hidden"><div class="modal-body p-0 position-relative"><button type="button" class="btn-close position-absolute end-0 m-3 bg-white" data-bs-dismiss="modal"></button><div class="ratio ratio-16x9"><iframe width="915" height="514" src="https://www.youtube.com/embed/HCd9sENj31c" title="This Picture Is Made of 10,000 Bottle Caps  | All Good" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></iframe></div></div></div></div></div>
+        <div class="modal fade" id="videoModal-plastic-4" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content border-0 rounded-4 overflow-hidden"><div class="modal-body p-0 position-relative"><button type="button" class="btn-close position-absolute end-0 m-3 bg-white" data-bs-dismiss="modal"></button><div class="ratio ratio-16x9"><iframe width="915" height="514" src="https://www.youtube.com/embed/c8gAOMrrHjo" title="DIY: Mirror Wall Hanging Decoration with Plastic Spoons {MadeByFate} #338" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></iframe></div></div></div></div></div>
+        <div class="modal fade" id="videoModal-plastic-5" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content border-0 rounded-4 overflow-hidden"><div class="modal-body p-0 position-relative"><button type="button" class="btn-close position-absolute end-0 m-3 bg-white" data-bs-dismiss="modal"></button><div class="ratio ratio-16x9"><iframe width="915" height="514" src="https://www.youtube.com/embed/muHYIJRzzso" title="Life Hack with Plastic Bottle - How to Make a Garden Irrigation System" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></iframe></div></div></div></div></div>
+        <div class="modal fade" id="videoModal-plastic-6" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content border-0 rounded-4 overflow-hidden"><div class="modal-body p-0 position-relative"><button type="button" class="btn-close position-absolute end-0 m-3 bg-white" data-bs-dismiss="modal"></button><div class="ratio ratio-16x9"><iframe width="915" height="514" src="https://www.youtube.com/embed/EGIS3UicAZg" title="Recycled Lay&#39;s potato chips zippered bag. Fun for back to school / prank DIY project!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div></div></div></div>
+        
+        <!-- Paper Modals -->
+        <div class="modal fade" id="videoModal-paper-1" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content border-0 rounded-4 overflow-hidden"><div class="modal-body p-0 position-relative"><button type="button" class="btn-close position-absolute end-0 m-3 bg-white" data-bs-dismiss="modal"></button><div class="ratio ratio-16x9"><iframe width="915" height="514" src="https://www.youtube.com/embed/ZWpArD0iTno" title="How to make a desk organizer from cardboard #cardboardfurniture #deskorganization #upcycling" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></iframe></div></div></div></div></div>
+        <div class="modal fade" id="videoModal-paper-2" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content border-0 rounded-4 overflow-hidden"><div class="modal-body p-0 position-relative"><button type="button" class="btn-close position-absolute end-0 m-3 bg-white" data-bs-dismiss="modal"></button><div class="ratio ratio-16x9"><iframe width="915" height="514" src="https://www.youtube.com/embed/9QqXzyllnS4" title="How to make bowl from waste paper without blender | DIY Paper Mache Bowl | paper recycling DIY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div></div></div></div>
+        <div class="modal fade" id="videoModal-paper-3" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content border-0 rounded-4 overflow-hidden"><div class="modal-body p-0 position-relative"><button type="button" class="btn-close position-absolute end-0 m-3 bg-white" data-bs-dismiss="modal"></button><div class="ratio ratio-16x9"><iframe width="915" height="514" src="https://www.youtube.com/embed/riZF9BZvnMk" title="DIY Decomposing Paper Pots | For Starting Seeds &amp; Easy Transplanting" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></iframe></div></div></div></div></div>
+        <div class="modal fade" id="videoModal-paper-4" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content border-0 rounded-4 overflow-hidden"><div class="modal-body p-0 position-relative"><button type="button" class="btn-close position-absolute end-0 m-3 bg-white" data-bs-dismiss="modal"></button><div class="ratio ratio-16x9"><iframe width="915" height="514" src="https://www.youtube.com/embed/5xrWrKIVBgo" title="How to make recycled paper (+ mould &amp; deckle diy) | Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div></div></div></div>
+        <div class="modal fade" id="videoModal-paper-5" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content border-0 rounded-4 overflow-hidden"><div class="modal-body p-0 position-relative"><button type="button" class="btn-close position-absolute end-0 m-3 bg-white" data-bs-dismiss="modal"></button><div class="ratio ratio-16x9"><iframe width="686" height="514" src="https://www.youtube.com/embed/W9iIMj0wkUk" title="DIY newspaper wall hanging/Newspaper craft ideas/newspaper craft wall decoration easy/Room decor" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div></div></div></div>
+        <div class="modal fade" id="videoModal-paper-6" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content border-0 rounded-4 overflow-hidden"><div class="modal-body p-0 position-relative"><button type="button" class="btn-close position-absolute end-0 m-3 bg-white" data-bs-dismiss="modal"></button><div class="ratio ratio-16x9"><iframe width="915" height="514" src="https://www.youtube.com/embed/CkTo8iPJHO4" title="Cat Collage Art | Made With Recycled Magazines" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></iframe></div></div></div></div></div>
+        
+        <!-- Electronic Modals -->
+        <div class="modal fade" id="videoModal-electronic-1" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content border-0 rounded-4 overflow-hidden"><div class="modal-body p-0 position-relative"><button type="button" class="btn-close position-absolute end-0 m-3 bg-white" data-bs-dismiss="modal"></button><div class="ratio ratio-16x9"><iframe width="915" height="514" src="https://www.youtube.com/embed/v8JJCbfIlws" title="Creating amazing art from e-waste" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div></div></div></div>
+        <div class="modal fade" id="videoModal-electronic-2" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content border-0 rounded-4 overflow-hidden"><div class="modal-body p-0 position-relative"><button type="button" class="btn-close position-absolute end-0 m-3 bg-white" data-bs-dismiss="modal"></button><div class="ratio ratio-16x9"><iframe width="325" height="578" src="https://www.youtube.com/embed/0P95TRWeFi0" title="Waste Bulb Reuse craft ideas😱#diy #reuse #youtubeshorts #shorts #craftideas #craft" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div></div></div></div>
+        <div class="modal fade" id="videoModal-electronic-3" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content border-0 rounded-4 overflow-hidden"><div class="modal-body p-0 position-relative"><button type="button" class="btn-close position-absolute end-0 m-3 bg-white" data-bs-dismiss="modal"></button><div class="ratio ratio-16x9"><iframe width="407" height="578" src="https://www.youtube.com/embed/PHDRZlZHKpk" title="DIY electronic waste recycling Ideas #electronic #craft #diy #gift #recycle" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div></div></div></div>
+        <div class="modal fade" id="videoModal-electronic-4" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content border-0 rounded-4 overflow-hidden"><div class="modal-body p-0 position-relative"><button type="button" class="btn-close position-absolute end-0 m-3 bg-white" data-bs-dismiss="modal"></button><div class="ratio ratio-16x9"><iframe width="915" height="514" src="https://www.youtube.com/embed/NhU22xG5lks" title="Trash To Cash! Clever Way To Reuse E Waste And Scrape Metal | Recycling Ideas With High Profit $" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div></div></div></div>
+        <div class="modal fade" id="videoModal-electronic-5" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content border-0 rounded-4 overflow-hidden"><div class="modal-body p-0 position-relative"><button type="button" class="btn-close position-absolute end-0 m-3 bg-white" data-bs-dismiss="modal"></button><div class="ratio ratio-16x9"></div></div></div></div></div>
+        <div class="modal fade" id="videoModal-electronic-6" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content border-0 rounded-4 overflow-hidden"><div class="modal-body p-0 position-relative"><button type="button" class="btn-close position-absolute end-0 m-3 bg-white" data-bs-dismiss="modal"></button><div class="ratio ratio-16x9"><iframe width="915" height="514" src="https://www.youtube.com/embed/NwE2jgaxX64" title="DIY e Waste Craft | Pencil Stand - LETS BE CREATIVE!! | ARZOO VLOGS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div></div></div></div>
+        
+        <!-- Glass Modals -->
+        <div class="modal fade" id="videoModal-glass-1" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content border-0 rounded-4 overflow-hidden"><div class="modal-body p-0 position-relative"><button type="button" class="btn-close position-absolute end-0 m-3 bg-white" data-bs-dismiss="modal"></button><div class="ratio ratio-16x9"><iframe width="915" height="514" src="https://www.youtube.com/embed/cLAoVh8jb9A" title="DIY Fall Leaf Mason Jar Candleholder (Full Length Tutorial) | Welcome to Nana&#39;s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div></div></div></div>
+        <div class="modal fade" id="videoModal-glass-2" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content border-0 rounded-4 overflow-hidden"><div class="modal-body p-0 position-relative"><button type="button" class="btn-close position-absolute end-0 m-3 bg-white" data-bs-dismiss="modal"></button><div class="ratio ratio-16x9"><iframe width="915" height="514" src="https://www.youtube.com/embed/OBOBath0_qc" title="How to make a terrarium (A complete guide)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div></div></div></div>
+        <div class="modal fade" id="videoModal-glass-3" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content border-0 rounded-4 overflow-hidden"><div class="modal-body p-0 position-relative"><button type="button" class="btn-close position-absolute end-0 m-3 bg-white" data-bs-dismiss="modal"></button><div class="ratio ratio-16x9"><iframe width="915" height="514" src="https://www.youtube.com/embed/0-ykEpKhv6Q" title="Mosaic Craft Kit Irregular Glass Mosaic Tiles DIY Mosaic Photo Frame Kit MAFA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div></div></div></div>
+        <div class="modal fade" id="videoModal-glass-4" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content border-0 rounded-4 overflow-hidden"><div class="modal-body p-0 position-relative"><button type="button" class="btn-close position-absolute end-0 m-3 bg-white" data-bs-dismiss="modal"></button><div class="ratio ratio-16x9"><iframe width="915" height="514" src="https://www.youtube.com/embed/hvu2GasJNNo" title="Glass Bottle Wind Chime; Marcie Ziv Sea Glass Wind Chimes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></iframe></div></div></div></div></div>
+        <div class="modal fade" id="videoModal-glass-5" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content border-0 rounded-4 overflow-hidden"><div class="modal-body p-0 position-relative"><button type="button" class="btn-close position-absolute end-0 m-3 bg-white" data-bs-dismiss="modal"></button><div class="ratio ratio-16x9"><iframe width="915" height="514" src="https://www.youtube.com/embed/fb94Q7yibYo" title="DIY / 10 Best Ideas from recycled Glass jars /Kitchen decor" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div></div></div></div>
+        <div class="modal fade" id="videoModal-glass-6" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content border-0 rounded-4 overflow-hidden"><div class="modal-body p-0 position-relative"><button type="button" class="btn-close position-absolute end-0 m-3 bg-white" data-bs-dismiss="modal"></button><div class="ratio ratio-16x9"><iframe width="915" height="514" src="https://www.youtube.com/embed/6LIYjcGH1Y0" title="3 ideas Bottle Art and Glass Jar decoration. Fairy house lamps using cardboard and paper" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div></div></div></div>
+        
+        <!-- Metal Modals -->
+        <div class="modal fade" id="videoModal-metal-1" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content border-0 rounded-4 overflow-hidden"><div class="modal-body p-0 position-relative"><button type="button" class="btn-close position-absolute end-0 m-3 bg-white" data-bs-dismiss="modal"></button><div class="ratio ratio-16x9"><iframe width="774" height="514" src="https://www.youtube.com/embed/G-M5sw55ZZ8" title="How to decorate tin can - DIY craft -DIY Pen Holder - DIY Tin Craft" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></iframe></div></div></div></div></div>
+        <div class="modal fade" id="videoModal-metal-2" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content border-0 rounded-4 overflow-hidden"><div class="modal-body p-0 position-relative"><button type="button" class="btn-close position-absolute end-0 m-3 bg-white" data-bs-dismiss="modal"></button><div class="ratio ratio-16x9"><iframe width="915" height="514" src="https://www.youtube.com/embed/_DG6usQpCHI" title="Tutorial: Pop Tab Purse Part 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div></div></div></div>
+        <div class="modal fade" id="videoModal-metal-3" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content border-0 rounded-4 overflow-hidden"><div class="modal-body p-0 position-relative"><button type="button" class="btn-close position-absolute end-0 m-3 bg-white" data-bs-dismiss="modal"></button><div class="ratio ratio-16x9"><iframe width="915" height="514" src="https://www.youtube.com/embed/_izUud0hY-c" title="TIN CAN LANTERNS | TURNING CANS INTO SPARKLING LAMPS IDEA | RECYCLE SOFT DRINK CAN OR BEER CAN" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div></div></div></div>
+        <div class="modal fade" id="videoModal-metal-4" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content border-0 rounded-4 overflow-hidden"><div class="modal-body p-0 position-relative"><button type="button" class="btn-close position-absolute end-0 m-3 bg-white" data-bs-dismiss="modal"></button><div class="ratio ratio-16x9"><iframe width="915" height="514" src="https://www.youtube.com/embed/rdFcBRGXiM8" title="How to Make COOKIE CUTTERS out of Soda Can - (DIY Sculpting Tools Tutorial)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div></div></div>
+        <div class="modal fade" id="videoModal-metal-5" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content border-0 rounded-4 overflow-hidden"><div class="modal-body p-0 position-relative"><button type="button" class="btn-close position-absolute end-0 m-3 bg-white" data-bs-dismiss="modal"></button><div class="ratio ratio-16x9"><iframe width="915" height="514" src="https://www.youtube.com/embed/wSrp1hId88o" title="Tin Can Wind Chimes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div></div></div></div>
+        <div class="modal fade" id="videoModal-metal-6" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content border-0 rounded-4 overflow-hidden"><div class="modal-body p-0 position-relative"><button type="button" class="btn-close position-absolute end-0 m-3 bg-white" data-bs-dismiss="modal"></button><div class="ratio ratio-16x9"><iframe width="325" height="578" src="https://www.youtube.com/embed/Ajg9q7hhKbg" title="DIY Recycled Metal Can Herb Garden" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></iframe></div></div></div></div></div>
+        
+        <!-- Fabric Modals -->
+        <div class="modal fade" id="videoModal-fabric-1" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content border-0 rounded-4 overflow-hidden"><div class="modal-body p-0 position-relative"><button type="button" class="btn-close position-absolute end-0 m-3 bg-white" data-bs-dismiss="modal"></button><div class="ratio ratio-16x9"><iframe width="915" height="514" src="https://www.youtube.com/embed/o75LptAui2g" title="How to make a T-Shirt Bag / DIY No Sew T-Shirt Bag /Old T-Shirt Reuse Idea / T-Shirt To shopping Bag" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div></div></div></div>
+        <div class="modal fade" id="videoModal-fabric-2" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content border-0 rounded-4 overflow-hidden"><div class="modal-body p-0 position-relative"><button type="button" class="btn-close position-absolute end-0 m-3 bg-white" data-bs-dismiss="modal"></button><div class="ratio ratio-16x9"><iframe width="915" height="514" src="https://www.youtube.com/embed/UM36GhsnAkM" title="DIY Wall Organizer from Denim Pockets!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div></div></div></div>
+        <div class="modal fade" id="videoModal-fabric-3" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content border-0 rounded-4 overflow-hidden"><div class="modal-body p-0 position-relative"><button type="button" class="btn-close position-absolute end-0 m-3 bg-white" data-bs-dismiss="modal"></button><div class="ratio ratio-16x9"><iframe width="908" height="514" src="https://www.youtube.com/embed/UdmVSIxbWqw" title="Crochet a round T-shirt yarn rug" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div></div></div></div>
+        <div class="modal fade" id="videoModal-fabric-4" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content border-0 rounded-4 overflow-hidden"><div class="modal-body p-0 position-relative"><button type="button" class="btn-close position-absolute end-0 m-3 bg-white" data-bs-dismiss="modal"></button><div class="ratio ratio-16x9"><iframe width="325" height="578" src="https://www.youtube.com/embed/TjLOzdCrdvI" title="sewing a bag charm / keychain out of scrap fabric 🧸✂️♻️ #sewing #upcycle  #diy #handmade" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div></div></div></div>
+        <div class="modal fade" id="videoModal-fabric-5" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content border-0 rounded-4 overflow-hidden"><div class="modal-body p-0 position-relative"><button type="button" class="btn-close position-absolute end-0 m-3 bg-white" data-bs-dismiss="modal"></button><div class="ratio ratio-16x9"><iframe width="915" height="514" src="https://www.youtube.com/embed/sKA7O-xltQI" title="How to Sew DIY Reusable Makeup Remover Pads" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div></div></div></div>
+        <div class="modal fade" id="videoModal-fabric-6" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content border-0 rounded-4 overflow-hidden"><div class="modal-body p-0 position-relative"><button type="button" class="btn-close position-absolute end-0 m-3 bg-white" data-bs-dismiss="modal"></button><div class="ratio ratio-16x9"><iframe width="325" height="578" src="https://www.youtube.com/embed/3Lze29wVdnw" title="#Recyling jeans scraps to make a #coinpurse #downtowntailoring" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div></div></div></div>
+        
+    </section>
+
+    <!-- Footer -->
+    <div class="container-fluid bg-black text-white px-5 py-3">
+ 
+        <div class="row mt-3">
+ 
+            <!-- Left Side -->
+            <div class="col-md-4">
+ 
+                <h1>Zephra</h1>
+ 
+                <p class="inria-serif-regular">
+                    Smart waste management solutions for sustainable cities.
+                    Turning waste problems into opportunities through technology
+                    and community action.
+                </p>
+ 
+                <p class="inria-serif-regular">
+                    <i class="bi bi-geo-alt-fill px-1"></i>
+                    123 Green Street, Eco City 45678
+                </p>
+ 
+                <p class="inria-serif-regular">
+                    <i class="bi bi-telephone-fill px-1"></i>
+                    +1 (555) 123-4567
+                </p>
+ 
+                <p class="inria-serif-regular">
+                    <i class="bi bi-envelope px-1"></i>
+                    zephra-waste_management.com
+                </p>
+ 
+            </div>
+ 
+            <!-- Quick Links -->
+            <div class="col-md-2 footer_session">
+ 
+                <h5 class="text-warning inria-serif-regular">Quick Links</h5>
+ 
+                <a href="index.html"><p class="inria-serif-regular">Home</p></a>
+                <a href="learn.html"><p class="inria-serif-regular">Learn</p></a>
+                <a href="aboutus.html"><p class="inria-serif-regular">About us</p></a>
+                <a href="contact.html"><p class="inria-serif-regular">Contact us</p></a>
+                <a href="solution.html"><p class="inria-serif-regular">Solutions</p></a>
+ 
+            </div>
+ 
+            <!-- Resources -->
+            <div class="col-md-3 footer_session">
+ 
+                <h5 class="text-warning inria-serif-regular">Resources</h5>
+ 
+                <a href="#"><p class="inria-serif-regular">Waste Segregation</p></a>
+                <a href="#"><p class="inria-serif-regular">Recycling Programs</p></a>
+                <a href="#"><p class="inria-serif-regular">Composting</p></a>
+                <a href="#"><p class="inria-serif-regular">Reduce Plastic</p></a>
+                <a href="#"><p class="inria-serif-regular">Clean-up Campaigns</p></a>
+ 
+            </div>
+ 
+            <!-- Support -->
+            <div class="col-md-3 footer_session">
+ 
+                <h5 class="text-warning inria-serif-regular">Support</h5>
+ 
+                <a href="#"><p class="inria-serif-regular">Help Center</p></a>
+                <a href="#"><p class="inria-serif-regular">Contact Support</p></a>
+                <a href="#FAQ"><p class="inria-serif-regular">FAQ</p></a>
+ 
+                <a href="https://www.facebook.com/"><i class="bi bi-facebook fs-3 me-3"></i></a>
+                <a href="https://web.telegram.org/"><i class="bi bi-telegram fs-3 me-3"></i></a>
+                <a href="https://www.instagram.com/"><i class="bi bi-instagram fs-3"></i></a>
+ 
+            </div>
+ 
+        </div>
+ 
+        <hr>
+ 
+        <!-- Bottom Footer -->
+        <div class="row">
+ 
+            <div class="col-md-6">
+                <p class="inria-serif-regular">© 2026 Waste Management Project</p>
+            </div>
+ 
+            <div class="col-md-6 text-md-end">
+ 
+                <a href="#"><span class="me-3 inria-serif-regular">Privacy Policy</span></a>
+                <a href="#"><span class="me-3 inria-serif-regular">Terms of Service</span></a>
+                <a href="#"><span class="inria-serif-regular">Cookie Policy</span></a>
+ 
+            </div>
+ 
+        </div>
+ 
+    </div>
+ 
+    <!-- AOS Animation JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({  });
+  </script>
+</body>
+</html>
