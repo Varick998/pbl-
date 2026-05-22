@@ -1,0 +1,2143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ZEPHRA | Waste Segregation</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      font-family: 'Inria Serif', serif;
+    }
+
+    body{
+      font-family: 'Inria Serif', serif;
+      background: #ffffff;
+      color: #4a4038;
+    }
+
+    /* navbar */
+    .navbar{
+      background: transparent;
+      position: relative;
+      z-index: 100;
+    }
+    .navbar-nav .nav-link{
+      color: #ffffff;
+      transition: 0.3s;
+      position: relative;
+    }
+
+    .navbar-nav .nav-link:hover{
+      color: #dea700;
+    }
+
+    .navbar-nav .nav-link.active{
+      color: #ffc107 !important;
+    }
+
+     .dropdown-item{
+        transition: 0.3s;
+        color: #ffc107;
+    }
+    .dropdown-item:hover{
+        background-color: #ffc107;
+        color: white;
+    }
+
+    .section-tag{
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(197,160,89,0.15);
+      color: #ffc107;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .solution-label{
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ffc107;
+      margin: 0;
+    }
+
+    .main-title{
+      font-family: 'Inria Serif', serif;
+      font-size: 56px;
+      margin-bottom: 25px;
+      line-height: 1.1;
+      color: #3f352d;
+    }
+
+    .main-title em,
+    .main-title span{
+      color: #ffc107;
+      font-style: italic;
+    }
+
+    .description{
+      font-size: 15px;
+      line-height: 1.9;
+      color: #6b6b6b;
+      margin-bottom: 24px;
+      font-weight: 300;
+    }
+
+    .sub-title{
+      font-family: 'Inria Serif', serif;
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #3f352d;
+    }
+
+    .step-item{
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      margin-bottom: 22px;
+    }
+
+    .step-number{
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid rgba(197,160,89,0.4);
+      color: #ffc107;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+      transition: 0.3s ease;
+    }
+
+    .step-item:hover .step-number{
+      background: #ffc107;
+      color: white;
+    }
+
+    .step-text{
+      font-size: 14px;
+      line-height: 1.8;
+      color: #666;
+      padding-top: 8px;
+      font-weight: 300;
+    }
+
+    /* Waste Type Cards */
+    .waste-box{
+      display: flex;
+      gap: 14px;
+      padding: 14px;
+      border-radius: 14px;
+      margin-bottom: 14px;
+      align-items: flex-start;
+    }
+
+    .waste-box i{
+      font-size: 20px;
+      margin-top: 3px;
+    }
+
+    .waste-box h6{
+      margin: 0;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .waste-box p{
+      margin: 4px 0 0;
+      font-size: 12px;
+      color: #6d6d6d;
+    }
+
+    /* Bin Cards */
+    .bin-card{
+      background: white;
+      border: 1px solid #eeeeee;
+      border-radius: 18px;
+      padding: 28px 18px;
+      text-align: center;
+      height: 100%;
+      transition: 0.3s ease;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+    }
+
+    .bin-card:hover{
+      transform: translateY(-5px);
+    }
+
+    .icon-circle{
+      width: 58px;
+      height: 58px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      color: white;
+      font-size: 24px;
+    }
+
+    .bin-card h5{
+      font-size: 16px;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .bin-card p{
+      font-size: 12px;
+      color: #6d6d6d;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* solution 2 */
+    .solution_small_boxes{
+      background-color: #f8f5f1;
+      padding: 8px 14px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      margin-left: 5px;
+      margin-right: 5px;
+      width: fit-content;
+      box-shadow: 1px 2px 9px rgba(0,0,0,0.1);
+      font-size: 14px;
+    }
+
+    .card-box{
+      background-color: #f8f5f1;
+      border-radius: 10px;
+      width: 200px;
+    }
+
+    .card-box .icon-circle{
+      background-color: rgb(163,203,83);
+      width: 60px;
+      height: 60px;
+      border-radius: 100%;
+    }
+
+    .arrow_icon{
+      font-size: 35px;
+      color: rgb(165,165,165);
+    }
+
+    .checked_sentences{
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+    }
+
+    @media screen and (max-width:768px){
+      .solution_img_container{
+        display: none !important;
+      }
+    }
+
+    /* solution 3 */
+    .small-title{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #ffc107;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .circle{
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(197,160,89,0.15);
+      color: #ffc107;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .section-title{
+      margin-top: 30px;
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #3f352d;
+    }
+
+    .tag{
+      background: white;
+      padding: 10px 18px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 8px;
+      font-size: 15px;
+    }
+
+    .main-img{
+      width: 100%;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+
+    .mini-box{
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: white;
+      padding: 10px;
+      width: 160px;
+      border-radius: 5px;
+      font-size: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .mini-box h6{
+      color: #7a8c5d;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .steps{
+      margin-top: 40px;
+    }
+
+    /* solution 4 */
+    .plastic-section{
+      background: #ffffff;
+    }
+
+    .plastic-section .main-title{
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .plastic-section .description{
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 40px;
+    }
+
+    .info-card:hover{
+      transform: translateY(-5px);
+    }
+
+    .info-card .card-title{
+      font-size: 22px;
+      margin-bottom: 25px;
+      font-weight: 500;
+      color: #3f352d;
+    }
+
+    .plastic-item{
+      margin-bottom: 18px;
+    }
+
+    .info-card {
+            background: #f7f5f0;
+            border: 1px solid #c2baa8;
+            border-radius: 12px;
+            padding: 40px 30px;
+            height: 100%;
+            color: #2b2826;
+        }
+ 
+        .icon-circle {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: #9ca670;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            font-size: 22px;
+            color: #f7f5f0;
+        }
+ 
+        .card-title {
+            font-size: 32px;
+            margin-bottom: 35px;
+            font-weight: 500;
+            color: #4b4338;
+        }
+ 
+        .number-badge {
+            width: 32px;
+            height: 32px;
+            border: 1px solid #4b4338;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+            flex-shrink: 0;
+        }
+ 
+        .badge-box {
+            border: 1px solid #9c9482;
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-size: 11px;
+            font-weight: bold;
+            display: inline-block;
+            width: 45px;
+            text-align: center;
+            color: #6a6258;
+        }
+ 
+        .alternative-row {
+            min-height: 45px;
+        }
+ 
+        @media (max-width: 768px) {
+            .main-title { font-size: 42px; }
+            .card-title { font-size: 28px; }
+        }
+
+    .plastic-code{
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(197,160,89,0.4);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      margin-right: 14px;
+      color: #ffc107;
+      font-weight: 500;
+      flex-shrink: 0;
+    }
+
+    .info-card .step-item{
+      margin-bottom: 20px;
+    }
+
+    .info-card .step-number{
+      width: 36px;
+      height: 36px;
+      font-size: 16px;
+    }
+
+    .eco-item{
+      margin-bottom: 16px;
+    }
+
+    .wrong-icon{
+      color: #d94c43;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .correct-icon{
+      color: #92b83f;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .eco-text{
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* solution 5 */
+    .cleanup-section{
+      position: relative;
+      min-height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url('pbl_image/solution_hero_citybushes.png') center/cover no-repeat;
+      padding: 100px 0;
+      margin-left: 0;
+    }
+
+    .cleanup-section .main-title{
+      color: #ffffff;
+    }
+
+    .cleanup-section .sub-title{
+      color: #ffffff;
+    }
+
+    .cleanup-section .description{
+      color: #ecebeb;
+    }
+
+    .cleanup-section .step-number{
+      border-color: #ffc107;
+      color: #ffc107;
+    }
+
+    .cleanup-section .step-item:hover .step-number{
+      background: #ffc107;
+      color: white;
+    }
+
+    .cleanup-section .step-text{
+      color: #e5e5e5;
+    }
+
+    .join-title{
+      font-size: 2rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .join-sub{
+      color: #ddd;
+      margin-bottom: 30px;
+    }
+
+    .join-card{
+      border: 2px solid rgba(255,255,255,0.7);
+      border-radius: 16px;
+      padding: 30px 20px;
+      text-align: center;
+      height: 100%;
+      transition: 0.3s ease;
+      backdrop-filter: blur(3px);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .join-card:hover{
+      transform: translateY(-5px);
+      border-color: #ffc107;
+    }
+
+    .join-card i{
+      font-size: 2rem;
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    .join-card h6{
+      margin: 0;
+      color: #ffc107;
+      font-weight: 500;
+    }
+
+    .fact-box{
+      margin-top: 35px;
+      border: 2px solid #ffc107;
+      border-radius: 14px;
+      padding: 25px;
+      background: rgba(255,255,255,0.03);
+    }
+
+    .fact-box h5{
+      color: #fff;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .fact-box p{
+      color: #ddd;
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    /* solution 6 */
+    .reusable-image:hover{
+      transform: scale(1.02);
+    }
+
+    .reusable-image{
+      transition: 0.5s ease;
+    }
+
+    .benefit-box{
+      background: #fff;
+      border-radius: 14px;
+      padding: 14px 16px;
+      gap: 10px;
+      transition: 0.3s ease;
+      height: 100%;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+      display: flex;
+      align-items: center;
+    }
+
+    .benefit-box:hover{
+      transform: translateY(-2px);
+    }
+
+    .benefit-box span{
+      font-size: 13px;
+      color: #666;
+      font-weight: 300;
+    }
+
+   /* solution 7 */
+    .solution_side_session{
+      border: 1px solid #eeeeee !important;
+      border-radius: 20px;
+      background-color: #f8f5f1 !important;
+      padding: 30px;
+    }
+
+    .gov-card{
+      border: 1px solid #eeeeee;
+      border-radius: 20px;
+      background-color: #f8f5f1;
+      transition: 0.3s ease;
+    }
+
+    .gov-card:hover{
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .gov-step-num{
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid rgba(197,160,89,0.4);
+      color: #ffc107;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+      transition: 0.3s ease;
+    }
+
+    .gov-step-item:hover .gov-step-num{
+      background: #ffc107;
+      color: white;
+    }
+
+    /* solution 8 */
+    .technology-section{
+      padding: 100px 0;
+      min-height: 100vh;
+      overflow: hidden;
+      background: linear-gradient(rgba(37,37,37,0.72),rgba(37,37,37,0.72)), url('pbl_image/solution_hero_city.png');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .technology-section .main-title{
+      color: #ffffff;
+    }
+
+    .main-description{
+      color: #eeeeee;
+      max-width: 450px;
+      margin: auto;
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    .solution-card{
+      background: #f5f2ec;
+      border-radius: 24px;
+      height: 75vh;
+      max-height: 760px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+      scrollbar-width: none;
+    }
+
+    .card-content{
+      flex: 1;
+      overflow-y: auto;
+      padding: 35px;
+      scrollbar-width: none;
+    }
+
+    .card-content::-webkit-scrollbar{
+      display: none;
+    }
+
+    .card-footer-custom{
+      padding: 22px 35px;
+      background: #f5f2ec;
+      border-top: 1px solid #ddd;
+    }
+
+    .card-header-custom{
+      display: flex;
+      gap: 16px;
+      margin-bottom: 25px;
+    }
+
+    .icon-box{
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: #b7d64d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .card-title{
+      font-size: 34px;
+      margin: 0;
+      color: #2d2d2d;
+    }
+
+    .card-subtitle{
+      color: #ffc107;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+    .content-title{
+      color: #7d6330;
+      font-size: 28px;
+      margin-top: 30px;
+      margin-bottom: 14px;
+      border-left: 3px solid #ffc107;
+      padding-left: 12px;
+    }
+
+    .content-text{
+      color: #5e5e5e;
+      line-height: 1.9;
+      font-size: 15px;
+    }
+
+    .custom-list{
+      padding-left: 20px;
+    }
+
+    .custom-list li{
+      margin-bottom: 12px;
+      color: #5e5e5e;
+      line-height: 1.8;
+    }
+
+    .explore-btn{
+      width: 100%;
+      background: #ffc107;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      padding: 14px 30px;
+      text-decoration: none;
+      display: block;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .explore-btn:hover{
+      background: #ffc107;
+      color: white;
+    }
+
+    .slider-btn{
+      width: 55px;
+      height: 55px;
+      border: none;
+      border-radius: 50%;
+      background: #d6c98f;
+      color: #2d2d2d;
+      font-size: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+
+    .slider-prev{
+      left: 5%;
+    }
+
+    .slider-next{
+      right: 5%;
+    }
+
+    .carousel-indicators{
+      position: relative;
+      margin-top: 30px;
+    }
+
+    .carousel-indicators [data-bs-target]{
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ffc107;
+      border: none;
+      margin: 0 6px;
+      opacity: 0.5;
+    }
+
+    .carousel-indicators .active{
+      opacity: 1;
+    }
+
+    .carousel-item{
+      transition: transform 0.7s ease-in-out;
+    }
+
+    @media(max-width:991px){
+      .main-title{
+        font-size: 42px !important;
+      }
+
+      .right-side{
+        margin-top: 60px;
+      }
+
+      .reusable-image{
+        height: 500px !important;
+      }
+
+      .eco-badge{
+        position: relative !important;
+        left: 0 !important;
+        bottom: 0 !important;
+        margin-top: 20px;
+        width: 100% !important;
+      }
+
+      .solution-card{
+        height: 80vh;
+      }
+
+      .card-content{
+        padding: 24px;
+      }
+
+      .card-footer-custom{
+        padding: 20px 24px;
+      }
+
+      .slider-btn{
+        display: none;
+      }
+
+      .info-card{
+        margin-bottom: 25px;
+      }
+      .navbar-nav .nav-link{
+        color: #5f5034;
+        transition: 0.3s;
+        position: relative;
+        text-align: center;
+      }
+    }
+
+    @media(max-width:768px){
+      .cleanup-section .main-title{
+        font-size: 2.2rem !important;
+      }
+
+      .join-title{
+        margin-top: 50px;
+      }
+    }
+
+    /* footer */
+    .inria-serif-light {
+          font-family: "Inria Serif", serif;
+          font-weight: 300;
+          font-style: normal;
+    }
+
+      .inria-serif-regular {
+          font-family: "Inria Serif", serif;
+          font-weight: 400;
+          font-style: normal;
+    }
+
+    .inria-serif-bold {
+        font-family: "Inria Serif", serif;
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    .inria-serif-light-italic {
+        font-family: "Inria Serif", serif;
+        font-weight: 300;
+        font-style: italic;
+    }
+
+    .inria-serif-regular-italic {
+        font-family: "Inria Serif", serif;
+        font-weight: 400;
+        font-style: italic;
+    }
+
+    .inria-serif-bold-italic {
+        font-family: "Inria Serif", serif;
+        font-weight: 700;
+        font-style: italic;
+    }
+
+    a{
+        text-decoration: none;
+        color: white;
+    }
+    a:hover{
+        text-decoration: underline;
+    }
+ 
+    @media screen and (max-width:768px){
+        .footer_session{
+            margin-top: 25px;
+        }
+
+        .hero_container{
+            margin-bottom: 75px;
+        }
+        .tab_lists{
+          margin-bottom: 20px;
+          margin-left: 5px;
+          margin-right: 5px;
+        }
+        .tab-content{
+          margin-left: 20px;
+          margin-right: 20px;
+        }
+    }
+    .solution_small_boxes{
+      background-color: rgb(163,203,83);
+      font-size: 20px;
+      width: 270px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .nav-link{
+        color: white;
+    }
+
+    .nav-link.active{
+        color: #ffe28b !important;
+    }
+
+    .nav-link:hover{
+        text-decoration: underline;
+        color: white;
+    }
+
+  </style>
+</head>
+
+<body id="Solutions">
+
+<!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark pt-3" style="padding-top: 20px; position: fixed; top: 0; width: 100%; z-index: 999; background-color: rgba(0, 0, 0, 0.267);">
+        <div class="container-fluid px-4 px-lg-5">
+          
+            <a href="#" class="navbar-brand fw-bold fs-2">
+                <img src="pbl_image/logo.png" alt="logo" style="width: auto; height: clamp(30px, 3vw, 50px);">
+            </a>
+          
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+          
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav mx-auto" style="gap: 8px;">
+                    <li class="nav-item"><a class="nav-link px-lg-3" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3" href="learn.html">Learn</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3" href="aboutus.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3" href="contact.html">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 active" href="solution.html">Solutions</a></li>
+                </ul>
+
+                <div class="d-flex align-items-center justify-content-center mt-3 mt-lg-0">
+                
+                    <input class="form-control rounded-pill border-0 me-3 d-none d-lg-block" type="text" placeholder="Search" style="width: min(260px, 90vw); height: 36px; background:white">
+                  
+                    <div class="dropdown">
+                        <a href="#" class="text-white text-decoration-none" data-bs-toggle="dropdown">
+                            <i class="bi bi-person-circle fs-1"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end p-3 border-0 shadow rounded-4" style="width: 260px;">
+                            <li><a class="dropdown-item rounded-3 py-3 d-flex align-items-center gap-3" href="#"><i class="bi bi-person"></i> Profile</a></li>
+                            <li><a class="dropdown-item rounded-3 py-3 d-flex align-items-center gap-3" href="#"><i class="bi bi-chat"></i> Community</a></li>
+                            <li><a class="dropdown-item rounded-3 py-3 d-flex align-items-center gap-3" href="#"><i class="bi bi-gear"></i> Settings</a></li>
+                            <li><a class="dropdown-item rounded-3 py-3 d-flex align-items-center gap-3" href="#"><i class="bi bi-info-circle"></i> Help Center</a></li>
+                            <li><a class="dropdown-item rounded-3 py-3 d-flex align-items-center gap-3" href="#"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+  </nav>
+
+<!-- solution 01: Proper Waste Segregation -->
+  <section id="segregation" class="segregation-section" style="padding: 100px 0;">
+    <div class="container">
+      <div class="row g-5 align-items-start">
+        <div class="col-lg-6">
+          <div class="d-flex align-items-center gap-3 mb-4">
+            <div class="section-tag">01</div>
+            <p class="solution-label">Solution</p>
+          </div>
+
+          <h1 class="main-title">Proper Waste <em>Segregation</em></h1>
+
+          <p class="description">
+            Proper waste segregation means sorting your waste into different categories so it can be handled, recycled, or disposed of correctly. Instead of throwing everything into one bin, you separate it based on type.
+          </p>
+
+          <p class="description">
+            It helps make recycling easier and more effective by keeping different types of waste separate. It reduces pollution, prevents health hazards, and ensures that recyclable and organic waste are reused properly instead of being dumped together.
+          </p>
+
+          <h3 class="sub-title">Types of Waste</h3>
+
+          <div class="waste-box" style="background: #e7f5e8;">
+            <i class="fa-solid fa-leaf text-success"></i>
+            <div>
+              <h6 class="text-success">Biodegradable</h6>
+              <p>Food scraps, leaves, paper — can decompose</p>
+            </div>
+          </div>
+
+          <div class="waste-box" style="background: #f3f3f3;">
+            <i class="fa-solid fa-box text-secondary"></i>
+            <div>
+              <h6>Non-biodegradable</h6>
+              <p>Plastic, glass, metal — does not decompose easily</p>
+            </div>
+          </div>
+
+          <div class="waste-box" style="background: #e6eefb;">
+            <i class="fa-solid fa-recycle text-primary"></i>
+            <div>
+              <h6 class="text-primary">Recyclable</h6>
+              <p>Paper, bottles, cans — can be reused</p>
+            </div>
+          </div>
+
+          <div class="waste-box" style="background: #fde8e8;">
+            <i class="fa-solid fa-circle-exclamation text-danger"></i>
+            <div>
+              <h6 class="text-danger">Hazardous</h6>
+              <p>Batteries, chemicals, medical waste — dangerous</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 right-side">
+          <h3 class="sub-title mb-4">Color-Coded Bins</h3>
+          <div class="row g-4 mb-5">
+            <div class="col-md-6">
+              <div class="bin-card">
+                <div class="icon-circle" style="background: #4CAF50;">
+                  <i class="fa-solid fa-trash"></i>
+                </div>
+                <h5>Green Bin</h5>
+                <p>Biodegradable waste — food scraps, leaves, organic waste</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="bin-card">
+                <div class="icon-circle" style="background: #3B82F6;">
+                  <i class="fa-solid fa-recycle"></i>
+                </div>
+                <h5>Blue Bin</h5>
+                <p>Recyclable waste — paper, plastic, glass, metal</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="bin-card">
+                <div class="icon-circle" style="background: #EF4444;">
+                  <i class="fa-solid fa-circle-exclamation"></i>
+                </div>
+                <h5>Red Bin</h5>
+                <p>Hazardous waste — batteries, chemicals, medical waste</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="bin-card">
+                <div class="icon-circle" style="background: #ffc107;">
+                  <i class="fa-solid fa-trash-can"></i>
+                </div>
+                <h5>Yellow Bin</h5>
+                <p>General/non-recyclable — dirty plastics, broken items</p>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="sub-title mb-4">How to Do It</h3>
+
+          <div class="step-item">
+            <div class="step-number">1</div>
+            <p class="step-text">Separate waste into categories (biodegradable, recyclable, non-recyclable)</p>
+          </div>
+          <div class="step-item">
+            <div class="step-number">2</div>
+            <p class="step-text">Use different bins or containers for each type</p>
+          </div>
+          <div class="step-item">
+            <div class="step-number">3</div>
+            <p class="step-text">Keep food and organic waste in a compost bin</p>
+          </div>
+          <div class="step-item">
+            <div class="step-number">4</div>
+            <p class="step-text">Put plastics, paper, glass, and metal in recycling bins</p>
+          </div>
+          <div class="step-item">
+            <div class="step-number">5</div>
+            <p class="step-text">Dispose of non-recyclable waste properly in general bins</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- solution 02: Recycling Programs  -->
+  <section id="recycling" class="recycling-section" style="padding: 100px 0;">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-md-4 solution_img_container flex-wrap d-flex justify-content-center align-items-center">
+          <img src="pbl_image/solution_bottles.png" alt="image" style="border-radius: 10px; width: 95%; height: auto;">
+        </div>
+        <div class="col-md-8">
+          <div class="d-flex align-items-center gap-3 mb-4">
+            <div class="section-tag">02</div>
+            <p class="solution-label">Solution</p>
+          </div>
+
+          <h1 class="main-title">Recycling <em>Programs</em></h1>
+
+          <p class="description">
+            Recycling programs are organized systems that collect waste materials like paper, plastic, glass, and metals, then sort and process them so they can be reused. Instead of throwing these items away, the program helps turn them into new products.
+          </p>
+          <p class="description">
+            They reduce the amount of waste sent to landfills, save natural resources by reusing materials, and use less energy compared to making new products from raw materials, which helps reduce pollution.
+          </p>
+
+          <h3 class="sub-title">Types of Materials</h3>
+
+          <div class="d-flex flex-wrap gap-3 mb-4">
+            <div class="solution_small_boxes">
+              <i class="bi bi-file-earmark" style="margin-right: 5px;"></i> Paper
+            </div>
+            <div class="solution_small_boxes">
+              <i class="bi bi-box" style="margin-right: 5px;"></i> Cardboard
+            </div>
+            <div class="solution_small_boxes">
+              <i class="bi bi-cup-straw" style="margin-right: 5px;"></i> Plastic
+            </div>
+            <div class="solution_small_boxes">
+              <i class="bi bi-cup" style="margin-right: 5px;"></i> Glass
+            </div>
+            <div class="solution_small_boxes">
+              <i class="bi bi-gear" style="margin-right: 5px;"></i> Metal
+            </div>
+            <div class="solution_small_boxes">
+              <i class="bi bi-phone-vibrate" style="margin-right: 5px;"></i> Electronic waste
+            </div>
+            <div class="solution_small_boxes">
+              <i class="bi bi-pin" style="margin-right: 5px;"></i> Textiles
+            </div>
+            <div class="solution_small_boxes">
+              <i class="bi bi-fork-knife" style="margin-right: 5px;"></i> Organic waste
+            </div>
+          </div>
+
+          <h3 class="sub-title">Key Benefits</h3>
+
+          <div class="checked_sentences">
+            <i class="bi bi-check2-circle" style="color: rgb(166,200,130); font-size: 25px; margin-right: 5px;"></i>
+            Reduces landfill waste significantly
+          </div>
+          <div class="checked_sentences">
+            <i class="bi bi-check2-circle" style="color: rgb(166,200,130); font-size: 25px; margin-right: 5px;"></i>
+            Saves natural resources
+          </div>
+          <div class="checked_sentences">
+            <i class="bi bi-check2-circle" style="color: rgb(166,200,130); font-size: 25px; margin-right: 5px;"></i>
+            Uses less energy than making new products
+          </div>
+          <div class="checked_sentences">
+            <i class="bi bi-check2-circle" style="color: rgb(166,200,130); font-size: 25px; margin-right: 5px;"></i>
+            Reduces overall pollution levels
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h3 class="sub-title">How It Works</h3>
+
+      <div class="d-flex flex-wrap justify-content-center align-items-center">
+
+        <div class="p-3 my-2 text-center card-box mx-3">
+          <div class="mx-auto my-3 d-flex justify-content-center align-items-center icon-circle">
+            <i class="bi bi-truck text-white" style="font-size: 30px;"></i>
+          </div>
+          <div style="font-size: 25px;">Collect</div>
+          <p style="font-size: 14px; color: #6d6d6d;">Gather used materials</p>
+        </div>
+
+        <i class="bi bi-arrow-right arrow_icon mx-2 d-none d-md-block"></i>
+
+        <div class="p-3 my-2 text-center card-box mx-3">
+          <div class="mx-auto my-3 d-flex justify-content-center align-items-center icon-circle">
+            <i class="bi bi-recycle text-white" style="font-size: 30px;"></i>
+          </div>
+          <div style="font-size: 25px;">Sort & Clean</div>
+          <p style="font-size: 14px; color: #6d6d6d;">Separate by type</p>
+        </div>
+
+        <i class="bi bi-arrow-right arrow_icon mx-2 d-none d-md-block"></i>
+
+        <div class="p-3 my-2 text-center card-box mx-3">
+          <div class="mx-auto my-3 d-flex justify-content-center align-items-center icon-circle">
+            <i class="bi bi-gear text-white" style="font-size: 30px;"></i>
+          </div>
+          <div style="font-size: 25px;">Process</div>
+          <p style="font-size: 14px; color: #6d6d6d;">Make new materials</p>
+        </div>
+
+        <i class="bi bi-arrow-right arrow_icon mx-2 d-none d-md-block"></i>
+
+        <div class="p-3 my-2 text-center card-box mx-3">
+          <div class="mx-auto my-3 d-flex justify-content-center align-items-center icon-circle">
+            <i class="bi bi-lightbulb text-white" style="font-size: 30px;"></i>
+          </div>
+          <div style="font-size: 25px;">New Products</div>
+          <p style="font-size: 14px; color: #6d6d6d;">Manufacture goods</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+<!-- solution 03: Composting -->
+  <section style="padding: 100px 0;">
+    <div class="container">
+      <div class="row g-5">
+        <!-- left-->
+        <div class="col-lg-7">
+          <div class="small-title">
+            <div class="circle">03</div>
+            <span>Solution</span>
+          </div>
+
+          <h1 class="main-title">Composting <em>Organic Waste</em></h1>
+
+          <p class="description">
+            Composting organic waste is the process of turning food scraps and natural materials like fruit peels, leaves, and vegetable waste into nutrient-rich soil called compost through natural decomposition.
+          </p>
+
+          <p class="description">
+            It helps reduce the amount of waste sent to landfills, which lowers pollution and harmful gases. It also creates natural fertilizer that improves soil health and helps plants grow better without chemicals.
+          </p>
+
+          <div class="section-title">What Can You Compost?</div>
+          <div>
+            <div class="tag"><i class="fa-solid fa-utensils"></i> Fruit & vegetable scraps</div>
+            <div class="tag"><i class="fa-solid fa-leaf"></i> Grass clippings & leaves</div>
+            <div class="tag"><i class="fa-regular fa-circle"></i> Eggshells</div>
+            <div class="tag"><i class="fa-regular fa-file"></i> Paper & cardboard</div>
+            <div class="tag"><i class="fa-solid fa-tree"></i> Small wood materials</div>
+            <div class="tag"><i class="fa-solid fa-mug-hot"></i> Coffee grounds & tea bags</div>
+          </div>
+
+          <div class="section-title">What You Can't Compost?</div>
+          <div>
+            <div class="tag"><i class="fa-solid fa-bottle-water"></i> Plastic</div>
+            <div class="tag"><i class="fa-solid fa-wind"></i> Vacuum dust and dryer lint</div>
+            <div class="tag"><i class="fa-solid fa-drumstick-bite"></i> Meat and animal products (limit)</div>
+            <div class="tag"><i class="fa-solid fa-box"></i> Aluminium foil</div>
+            <div class="tag"><i class="fa-solid fa-paw"></i> Pet waste</div>
+            <div class="tag"><i class="fa-solid fa-link"></i> String and synthetic materials</div>
+          </div>
+        </div>
+
+        <!-- right -->
+        <div class="col-lg-5 position-relative">
+          <img src="pbl_image/solution_mmworkers.png" class="main-img">
+
+          <div class="mini-box">
+            <h6>🌱 Natural Fertilizer</h6>
+            Compost enriches soil and helps plants grow without chemicals
+          </div>
+
+          <div class="steps">
+            <h3 class="sub-title">How to Do It</h3>
+
+            <div class="step-item">
+              <div class="step-number">1</div>
+              <div class="step-text">
+                Collect organic waste like fruit peels, vegetable scraps, leaves, and grass
+              </div>
+            </div>
+
+            <div class="step-item">
+              <div class="step-number">2</div>
+              <div class="step-text">
+                Put them in a compost bin or a designated pile in a dry, shaded area
+              </div>
+            </div>
+
+            <div class="step-item">
+              <div class="step-number">3</div>
+              <div class="step-text">
+                Mix and turn the waste regularly to help it break down faster into compost
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- solution 04: Reducing Plastic Use  -->
+  <section class="plastic-section" style="padding: 100px 0;">
+    <div class="container">
+
+      <!-- Header -->
+      <div class="text-center mb-5">
+        <div class="d-flex justify-content-center align-items-center gap-3 mb-3">
+          <div class="section-tag">04</div>
+          <p class="solution-label">Solution</p>
+        </div>
+
+        <h1 class="main-title">Reducing <em>Plastic Use</em></h1>
+
+        <p class="description mt-3">
+          Reducing plastic use means cutting down on single-use plastics and choosing reusable or eco-friendly alternatives like cloth bags, metal bottles, or paper packaging instead. It helps reduce plastic pollution in land and oceans, protects animals that can be harmed by plastic waste, and keeps the environment cleaner. It also reduces the amount of non-biodegradable waste that takes hundreds of years to break down.
+        </p>
+      </div>
+
+      <!-- Cards -->
+      <div class="row g-4">
+
+        <div class="col-lg-4">
+                  <div class="info-card">
+                      <div class="icon-circle">
+                          <i class="bi bi-box-seam"></i>
+                      </div>
+                      <h2 class="card-title">Common Plastics</h2>
+                    
+                      <div class="d-flex align-items-center gap-3 mb-4">
+                          <span class="badge-box">PET</span>
+                          <span class="small text-muted">Water and soda bottles</span>
+                      </div>
+                      <div class="d-flex align-items-center gap-3 mb-4">
+                          <span class="badge-box">HDPE</span>
+                          <span class="small text-muted">Milk jugs and detergent bottles</span>
+                      </div>
+                      <div class="d-flex align-items-center gap-3 mb-4">
+                          <span class="badge-box">PVC</span>
+                          <span class="small text-muted">Pipes and packaging</span>
+                      </div>
+                      <div class="d-flex align-items-center gap-3 mb-4">
+                          <span class="badge-box">LDPE</span>
+                          <span class="small text-muted">Plastic bags and wraps</span>
+                      </div>
+                      <div class="d-flex align-items-center gap-3 mb-4">
+                          <span class="badge-box">PP</span>
+                          <span class="small text-muted">Food containers and bottle caps</span>
+                      </div>
+                      <div class="d-flex align-items-center gap-3 mb-2">
+                          <span class="badge-box">PS</span>
+                          <span class="small text-muted">Foam cups and packaging</span>
+                      </div>
+                  </div>
+              </div>
+  
+            
+              <div class="col-lg-4">
+                  <div class="info-card">
+                      <div class="icon-circle">
+                          <i class="bi bi-lightbulb"></i>
+                      </div>
+                      <h2 class="card-title">How to Do It</h2>
+                    
+                      <div class="d-flex align-items-start gap-3 mb-4" style="min-height: 50px;">
+                          <div class="number-badge">1</div>
+                          <span class="small text-muted pt-1">Use reusable items like cloth bags, metal bottles, and glass containers</span>
+                      </div>
+                      <div class="d-flex align-items-start gap-3 mb-4" style="min-height: 50px;">
+                          <div class="number-badge">2</div>
+                          <span class="small text-muted pt-1">Avoid plastic packaging when possible</span>
+                      </div>
+                      <div class="d-flex align-items-start gap-3 mb-4" style="min-height: 50px;">
+                          <div class="number-badge">3</div>
+                          <span class="small text-muted pt-1">Choose products with less or eco-friendly packaging</span>
+                      </div>
+                      <div class="d-flex align-items-start gap-3 mb-2" style="min-height: 50px;">
+                          <div class="number-badge">4</div>
+                          <span class="small text-muted pt-1">Recycle plastic properly to reduce waste</span>
+                      </div>
+                  </div>
+              </div>
+  
+            
+              <div class="col-lg-4">
+                  <div class="info-card">
+                      <div class="icon-circle">
+                          <i class="bi bi-arrow-left-right"></i>
+                      </div>
+                      <h2 class="card-title">Eco-Friendly Alternatives</h2>
+  
+                      <!-- item 1 -->
+                      <div class="d-flex justify-content-between align-items-center alternative-row mb-4">
+                          <div class="d-flex align-items-center gap-2 w-50">
+                              <i class="bi bi-x-circle text-danger fs-5"></i>
+                              <span class="small text-muted">Plastic bags</span>
+                          </div>
+                          <div class="d-flex align-items-center gap-2 justify-content-start w-50 ps-2">
+                              <i class="bi bi-check-circle text-success fs-5"></i>
+                              <span class="small text-muted">Cloth or jute bags</span>
+                          </div>
+                      </div>
+  
+                      <!-- item 2 -->
+                      <div class="d-flex justify-content-between align-items-center alternative-row mb-4">
+                          <div class="d-flex align-items-center gap-2 w-50">
+                              <i class="bi bi-x-circle text-danger fs-5"></i>
+                              <span class="small text-muted">Plastic bottles</span>
+                          </div>
+                          <div class="d-flex align-items-center gap-2 justify-content-start w-50 ps-2">
+                              <i class="bi bi-check-circle text-success fs-5"></i>
+                              <span class="small text-muted">Glass or metal bottles</span>
+                          </div>
+                      </div>
+  
+                      <!-- item 3 -->
+                      <div class="d-flex justify-content-between align-items-center alternative-row mb-4">
+                          <div class="d-flex align-items-center gap-2 w-50">
+                              <i class="bi bi-x-circle text-danger fs-5"></i>
+                              <span class="small text-muted">Plastic packaging</span>
+                          </div>
+                          <div class="d-flex align-items-center gap-2 justify-content-start w-50 ps-2">
+                              <i class="bi bi-check-circle text-success fs-5"></i>
+                              <span class="small text-muted">Paper or cardboard</span>
+                          </div>
+                      </div>
+  
+                      <!-- item 4 -->
+                      <div class="d-flex justify-content-between align-items-center alternative-row mb-4">
+                          <div class="d-flex align-items-center gap-2 w-50">
+                              <i class="bi bi-x-circle text-danger fs-5"></i>
+                              <span class="small text-muted">Plastic cutlery</span>
+                          </div>
+                          <div class="d-flex align-items-center gap-2 justify-content-start w-50 ps-2">
+                              <i class="bi bi-check-circle text-success fs-5"></i>
+                              <span class="small text-muted">Bamboo or wooden</span>
+                          </div>
+                      </div>
+  
+                      <!-- item 5 -->
+                      <div class="d-flex justify-content-between align-items-center alternative-row mb-4">
+                          <div class="d-flex align-items-center gap-2 w-50">
+                              <i class="bi bi-x-circle text-danger fs-5"></i>
+                              <span class="small text-muted">Plastic containers</span>
+                          </div>
+                          <div class="d-flex align-items-center gap-2 justify-content-start w-50 ps-2">
+                              <i class="bi bi-check-circle text-success fs-5"></i>
+                              <span class="small text-muted">Stainless steel or ceramic</span>
+                          </div>
+                      </div>
+  
+                      <!-- item 6 -->
+                      <div class="d-flex justify-content-between align-items-center alternative-row mb-2">
+                          <div class="d-flex align-items-center gap-2 w-50">
+                              <i class="bi bi-x-circle text-danger fs-5"></i>
+                              <span class="small text-muted">Plastic wrap</span>
+                          </div>
+                          <div class="d-flex align-items-center gap-2 justify-content-start w-50 ps-2">
+                              <i class="bi bi-check-circle text-success fs-5"></i>
+                              <span class="small text-muted">Beeswax wraps</span>
+                          </div>
+                      </div>
+  
+                  </div>
+              </div>
+  
+          </div>
+      </div>
+    </div>
+  </section>
+
+<!-- solution 05: Community Clean-Up Events  -->
+  <section class="cleanup-section">
+    <div class="container">
+      <div class="row align-items-start g-5">
+        <!-- left-->
+        <div class="col-lg-6">
+          <div class="d-flex align-items-center gap-3 mb-4">
+            <div class="section-tag" style="border-color: #ffc107; color: #ffc107; background: rgba(201,164,92,0.15);">05</div>
+            <p class="solution-label" style="color: #ffc107;">Solution</p>
+          </div>
+
+          <h1 class="main-title">Community <em>Clean-up Campaigns</em></h1>
+
+          <p class="description">
+            Community clean-up campaigns are organized activities where people in a community come together to collect and remove litter from public places like streets, parks, and riversides.
+          </p>
+
+          <p class="description">
+            They help keep the environment clean, reduce pollution, and make public spaces safer and more beautiful. They also raise awareness about waste management and encourage people to take care of their surroundings.
+          </p>
+
+          <h3 class="sub-title">How to Organize One</h3>
+
+          <div class="step-item">
+            <div class="step-number">1</div>
+            <div class="step-text">
+              Gather a group of people who want to help and pick a public area that needs cleaning.
+            </div>
+          </div>
+
+          <div class="step-item">
+            <div class="step-number">2</div>
+            <div class="step-text">
+              Bring tools like gloves, trash bags, and tongs to safely collect litter.
+            </div>
+          </div>
+
+          <div class="step-item">
+            <div class="step-number">3</div>
+            <div class="step-text">
+              After cleaning, separate the waste for recycling and dispose of it properly.
+            </div>
+          </div>
+        </div>
+
+        <!-- right -->
+        <div class="col-lg-6">
+          <h2 class="join-title">Who Can Join?</h2>
+          <p class="join-sub">Anyone can join a community clean-up campaign!</p>
+
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="join-card">
+                <i class="bi bi-mortarboard"></i>
+                <h6>Students</h6>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="join-card">
+                <i class="bi bi-people"></i>
+                <h6>Families</h6>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="join-card">
+                <i class="bi bi-clipboard-data"></i>
+                <h6>Teachers</h6>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="join-card">
+                <i class="bi bi-person-hearts"></i>
+                <h6>Local Residents</h6>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="join-card">
+                <i class="bi bi-person-raised-hand"></i>
+                <h6>Volunteers</h6>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="join-card">
+                <i class="bi bi-buildings"></i>
+                <h6>Businesses & Orgs</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="fact-box">
+            <h5><i class="bi bi-lightbulb me-2 text-warning"></i> Did You Know?</h5>
+            <p>
+              Community clean-ups not only improve the physical environment but also build stronger social bonds and community spirit among participants.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- solution 06: Reusable Items  -->
+  <section id="reusable" class="reusable-section" style="padding: 100px 0;">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <!-- left -->
+        <div class="col-lg-6">
+          <div class="reusable-image-wrapper position-relative">
+            <img src="pbl_image/solution_vege_waste.png"
+              alt="Reusable Items"
+              class="reusable-image object-fit-cover rounded-2"
+              style="height: 810px; width: 100%;">
+
+            <div class="eco-badge position-absolute rounded-0 text-white" style="background: #3c7a5a; padding: 18px; box-shadow: 0 10px 25px rgba(0,0,0,0.12); bottom: -40px; left: -10px; width: 200px;">
+              <i class="fa-solid fa-earth-americas d-block" style="font-size: 22px; margin-bottom: 10px; color: #9effbc;"></i>
+              <p style="font-size: 11px; line-height: 1.8; margin: 0; font-weight: 300;">
+                Every reusable item used prevents hundreds of single-use items from entering landfills
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- right -->
+        <div class="col-lg-6">
+          <div class="d-flex align-items-center gap-3 mb-4">
+            <div class="section-tag">06</div>
+            <p class="solution-label">Solution</p>
+          </div>
+
+          <h2 class="main-title">Using <em>Reusable Items</em></h2>
+
+          <p class="description">
+            Using reusable items means choosing products that can be used many times instead of throwing them away after one use, like bottles, bags, and containers.
+          </p>
+
+          <p class="description">
+            It reduces waste, saves money over time, and helps protect the environment by cutting down on single-use plastics and disposable products that end up in landfills.
+          </p>
+
+          <h3 class="sub-title">How to Use Them</h3>
+
+          <div class="step-item">
+            <div class="step-number">1</div>
+            <p class="step-text">Replace single-use products in your daily life with reusable alternatives</p>
+          </div>
+          <div class="step-item">
+            <div class="step-number">2</div>
+            <p class="step-text">Carry a reusable bag when shopping and use a refillable water bottle</p>
+          </div>
+          <div class="step-item">
+            <div class="step-number">3</div>
+            <p class="step-text">Wash and clean them properly after each use so they can last longer</p>
+          </div>
+          <div class="step-item">
+            <div class="step-number">4</div>
+            <p class="step-text">Keep them with you so you can use them whenever needed</p>
+          </div>
+
+          <h3 class="sub-title">Benefits</h3>
+
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="benefit-box">
+                <i class="fa-solid fa-check" style="color: #5dbb52; font-size: 14px; margin-right: 10px;"></i>
+                <span>Reduces waste & pollution</span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="benefit-box">
+                <i class="fa-solid fa-check" style="color: #5dbb52; font-size: 14px; margin-right: 10px;"></i>
+                <span>Saves money over time</span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="benefit-box">
+                <i class="fa-solid fa-check" style="color: #5dbb52; font-size: 14px; margin-right: 10px;"></i>
+                <span>Protects the environment</span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="benefit-box">
+                <i class="fa-solid fa-check" style="color: #5dbb52; font-size: 14px; margin-right: 10px;"></i>
+                <span>Uses fewer natural resources</span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="benefit-box">
+                <i class="fa-solid fa-check" style="color: #5dbb52; font-size: 14px; margin-right: 10px;"></i>
+                <span>Reduces plastic use</span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="benefit-box">
+                <i class="fa-solid fa-check" style="color: #5dbb52; font-size: 14px; margin-right: 10px;"></i>
+                <span>More durable & long-lasting</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <!-- solution 07: Government Rules & Policies  -->
+  <section style="padding: 100px 0;">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-md-6">
+          <div class="d-flex align-items-center gap-3 mb-4">
+            <div class="section-tag">07</div>
+            <p class="solution-label">Solution</p>
+          </div>
+
+          <h1 class="main-title">Government <em>Rules & Policies</em></h1>
+
+          <p class="description">
+            Government rules and policies are official guidelines created by authorities to manage waste properly, protect the environment, and ensure that people and businesses follow responsible waste disposal practices.
+          </p>
+
+          <p class="description">
+            These policies help create structured systems for waste collection, recycling, and disposal. They also set penalties for violations and incentives for good practices, making waste management more organized and effective across communities.
+          </p>
+        </div>
+
+        <div class="col-md-6">
+          <div class="solution_side_session">
+            <i class="bi bi-person-circle" style="font-size: 40px; color: #ffc107;"></i>
+            <h3 class="sub-title mt-3" style="font-size: 22px;">How Citizens Can Help</h3>
+
+            <div class="checked_sentences">
+              <i class="bi bi-award" style="font-size: 25px; margin-right: 10px; color: #ffc107;"></i>
+              Follow environmental rules and properly manage your waste.
+            </div>
+            <div class="checked_sentences">
+              <i class="bi bi-recycle" style="font-size: 25px; margin-right: 10px; color: #ffc107;"></i>
+              Reduce, reuse, and recycle materials in daily life.
+            </div>
+            <div class="checked_sentences">
+              <i class="bi bi-box2-heart" style="font-size: 25px; margin-right: 10px; color: #ffc107;"></i>
+              Support government programs by joining clean ups and community activities.
+            </div>
+            <div class="checked_sentences">
+              <i class="bi bi-megaphone" style="font-size: 25px; margin-right: 10px; color: #ffc107;"></i>
+              Spread awareness about protecting the environment.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-5">
+      <div class="row align-items-start g-5">
+        <div class="col-md-6">
+          <h3 class="sub-title">How They Work</h3>
+
+          <div class="step-item gov-step-item">
+            <div class="gov-step-num">1</div>
+            <p class="step-text">Set clear guidelines that people, businesses, and communities must follow.</p>
+          </div>
+          <div class="step-item gov-step-item">
+            <div class="gov-step-num">2</div>
+            <p class="step-text">Enforce rules through inspections, fines, or rewards.</p>
+          </div>
+          <div class="step-item gov-step-item">
+            <div class="gov-step-num">3</div>
+            <p class="step-text">Provide systems like waste management programs and recycling laws.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="row g-3 justify-content-center">
+            <div class="col-5">
+              <div class="gov-card p-3 text-center">
+                <div class="mx-auto my-3 d-flex justify-content-center align-items-center">
+                  <i class="bi bi-envelope-paper" style="font-size: 45px; color: #ffc107;"></i>
+                </div>
+                <div style="font-size: 18px; font-weight: 700;">Waste Management Laws</div>
+                <p style="font-size: 14px; color: #6d6d6d;">Regulation on waste handling</p>
+              </div>
+            </div>
+            <div class="col-5">
+              <div class="gov-card p-3 text-center">
+                <div class="mx-auto my-3 d-flex justify-content-center align-items-center">
+                  <i class="bi bi-recycle" style="font-size: 45px; color: #ffc107;"></i>
+                </div>
+                <div style="font-size: 18px; font-weight: 700;">Recycling Mandates</div>
+                <p style="font-size: 14px; color: #6d6d6d;">Required recycling practices</p>
+              </div>
+            </div>
+            <div class="col-5">
+              <div class="gov-card p-3 text-center">
+                <div class="mx-auto my-3 d-flex justify-content-center align-items-center">
+                  <i class="bi bi-cash-coin" style="font-size: 45px; color: #ffc107;"></i>
+                </div>
+                <div style="font-size: 18px; font-weight: 700;">Fines & Penalties</div>
+                <p style="font-size: 14px; color: #6d6d6d;">Consequences for violations</p>
+              </div>
+            </div>
+            <div class="col-5">
+              <div class="gov-card p-3 text-center">
+                <div class="mx-auto my-3 d-flex justify-content-center align-items-center">
+                  <i class="bi bi-trophy" style="font-size: 45px; color: #ffc107;"></i>
+                </div>
+                <div style="font-size: 18px; font-weight: 700;">Incentive Programs</div>
+                <p style="font-size: 14px; color: #6d6d6d;">Rewards for compliance</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- solution 08: Technology Solutions  -->
+  <section class="technology-section">
+    <div class="text-center mb-5">
+      <div class="d-flex justify-content-center align-items-center gap-3 mb-3">
+        <div class="section-tag" style="border-color: #c5a059; color: #c5a059; background: rgba(197,160,89,0.15);">08</div>
+        <div class="solution-label">Solution</div>
+      </div>
+
+      <h1 class="main-title" style="color: #ffffff;">Technology Solutions</h1>
+
+      <p class="main-description">
+        Exploring smart solutions for a sustainable innovative future.
+      </p>
+    </div>
+    <ul class="nav nav-pills justify-content-center py-2">
+      <li class="nav-item mx-2 d-flex tab_lists">
+        <a href="#solution_stb" class="nav-link active solution_small_boxes" data-bs-toggle="tab" style="background-color: rgb(163,203,83) ; font-size: 20px; width: 270px;">
+          Smart Trash Bin
+        </a>
+      </li>
+      <li class="nav-item mx-2 tab_lists">
+        <a href="#solution_wrs" class="nav-link solution_small_boxes" data-bs-toggle="tab" style="background-color: rgb(163,203,83) ; font-size:  20px;">
+          Waste Reporting System
+        </a>
+      </li>
+      <li class="nav-item mx-2 tab_lists">
+        <a href="#solution_awss" class="nav-link solution_small_boxes" data-bs-toggle="tab" style="background-color: rgb(163,203,83) ; font-size:  20px;">
+          AI Waste Sorting System
+        </a>
+      </li>
+      <li class="nav-item mx-2 tab_lists">
+        <a href="#solution_rrs" class="nav-link solution_small_boxes" data-bs-toggle="tab" style="background-color: rgb(163,203,83) ; font-size:  20px;">
+          Recycling Reward System
+        </a>
+      </li>
+      <li class="nav-item mx-2 tab_lists">
+        <a href="#solution_swc" class="nav-link solution_small_boxes" data-bs-toggle="tab" style="background-color: rgb(163,203,83) ; font-size:  20px;">
+          Smart Waste Collection
+        </a>
+      </li>
+    </ul>
+    <div class="tab-content mt-4 tab_lists">
+      <div class="tab-pane active" id="solution_stb">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="solution-card">
+              <div class="card-content">
+                <div class="card-header-custom">
+                  <div class="icon-box"><i class="bi bi-trash"></i></div>
+                  <div>
+                    <h2 class="card-title">Smart Trash Bin</h2>
+                    <p class="card-subtitle">Solution 01 of 05</p>
+                  </div>
+                </div>
+                <h3 class="content-title">What it is?</h3>
+                <p class="content-text">A smart trash bin that uses sensor technology to improve hygiene and support better waste management. It is designed to reduce the need for physical contact by opening automatically, making waste disposal cleaner and more convenient for users. It can also include indicators and smart features like AI and internet connectivity to monitor waste levels and improve collection.</p>
+                <h3 class="content-title">How does it work?</h3>
+                <p class="content-text">The bin uses sensors to detect when a person is nearby and automatically opens its lid. After a few seconds, it closes by itself. It may also include a red light or buzzer to indicate when the bin is full. With added technology like AI and internet connection, the bin can monitor waste levels, help sort materials, and send data to improve waste collection efficiency.</p>
+                <h3 class="content-title">How to use it?</h3>
+                <ul class="custom-list">
+                  <li>Approach the bin and it will open automatically using sensors</li>
+                  <li>Throw your waste into the correct section</li>
+                  <li>Do not touch the bin to keep it hygienic</li>
+                  <li>Check the light or sound signal to see if the bin is full before using it</li>
+                </ul>
+                <h3 class="content-title">Why it matters (2050)?</h3>
+                <ul class="custom-list">
+                  <li>Reduces unnecessary waste collection trips to save fuel & energy</li>
+                  <li>Improves recycling accuracy for less contamination</li>
+                  <li>Keeps cities cleaner and more efficient</li>
+                  <li>Supports smart city systems using real-time data</li>
+                  <li>Reduces landfill waste and pollution in the future</li>
+                  <li>Encourages people to use bins properly for less littering</li>
+                  <li>Helps prevent bad smells and the spread of bacteria</li>
+                  <li>Improves waste management with smart monitoring</li>
+                  <li>Supports cleaner, smarter communities in the future (2050)</li>
+                </ul>
+              </div>
+              <div class="card-footer-custom">
+                <a href="smart-bin.html" class="explore-btn">Explore More Ideas</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane" id="solution_wrs">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="solution-card">
+              <div class="card-content">
+                <div class="card-header-custom">
+                  <div class="icon-box"><i class="bi bi-flag"></i></div>
+                  <div>
+                    <h2 class="card-title">Waste Reporting System</h2>
+                    <p class="card-subtitle">Solution 02 of 05</p>
+                  </div>
+                </div>
+                <h3 class="content-title">What it is?</h3>
+                <p class="content-text">A digital system that allows users to report waste-related issues in their community, such as dirty areas, illegal dumping, or overflowing bins. It helps connect the public with authorities to improve waste management.</p>
+                <h3 class="content-title">How does it work?</h3>
+                <p class="content-text">Users can mark locations on a map and upload photos or descriptions of the problem. The data is sent through the platform, allowing authorities or communities to track and respond more efficiently.</p>
+                <h3 class="content-title">How to use it?</h3>
+                <ul class="custom-list">
+                  <li>Open the platform and select the report feature</li>
+                  <li>Mark the location of the waste problem</li>
+                  <li>Upload a photo or description</li>
+                  <li>Submit the report and wait for response or updates</li>
+                </ul>
+                <h3 class="content-title">Why it matters (2050)?</h3>
+                <ul class="custom-list">
+                  <li>Helps identify waste problems quickly and accurately</li>
+                  <li>Encourages community participation and responsibility</li>
+                  <li>Supports faster and more efficient waste collection</li>
+                  <li>Supports smart city systems using real-time data</li>
+                  <li>Reduces illegal dumping and unmanaged waste</li>
+                  <li>Improves communication between citizens and authorities</li>
+                  <li>Creates cleaner and more organized communities in the future</li>
+                </ul>
+              </div>
+              <div class="card-footer-custom">
+                <a href="smart-bin.html" class="explore-btn">Explore More Ideas</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane" id="solution_awss">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="solution-card">
+              <div class="card-content">
+                <div class="card-header-custom">
+                  <div class="icon-box"><i class="bi bi-upc-scan"></i></div>
+                  <div>
+                    <h2 class="card-title">AI Waste Sorting System</h2>
+                    <p class="card-subtitle">Solution 03 of 05</p>
+                  </div>
+                </div>
+                <h3 class="content-title">What it is?</h3>
+                <p class="content-text">A smart system that uses artificial intelligence (AI) to identify and sort different types of waste, improving recycling and reducing contamination.</p>
+                <h3 class="content-title">How does it work?</h3>
+                <p class="content-text">Cameras and sensors scan waste items and use AI to recognize materials such as plastic, metal, or organic waste. The system then sorts them into the correct categories automatically.</p>
+                <h3 class="content-title">How to use it?</h3>
+                <ul class="custom-list">
+                  <li>Place waste into the designated input area</li>
+                  <li>Let the system automatically identify and sort the waste</li>
+                  <li>Follow instructions if manual input is needed</li>
+                  <li>Avoid mixing large or unknown materials</li>
+                </ul>
+                <h3 class="content-title">Why it matters (2050)?</h3>
+                <ul class="custom-list">
+                  <li>Improves recycling accuracy for less contamination</li>
+                  <li>Reduces human error in waste sorting</li>
+                  <li>Increases efficiency in recycling systems</li>
+                  <li>Supports advanced smart waste management</li>
+                  <li>Reduces landfill waste and environmental impact</li>
+                  <li>Promotes sustainable waste practices in the future</li>
+                </ul>
+              </div>
+              <div class="card-footer-custom">
+                <a href="smart-bin.html" class="explore-btn">Explore More Ideas</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane" id="solution_rrs">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="solution-card">
+              <div class="card-content">
+                <div class="card-header-custom">
+                  <div class="icon-box"><i class="bi bi-gift"></i></div>
+                  <div>
+                    <h2 class="card-title">Recycling Reward System</h2>
+                    <p class="card-subtitle">Solution 04 of 05</p>
+                  </div>
+                </div>
+                <h3 class="content-title">What it is?</h3>
+                <p class="content-text">A digital system that rewards users for recycling and proper waste disposal, encouraging sustainable behavior through incentives.</p>
+                <h3 class="content-title">How does it work?</h3>
+                <p class="content-text">Users earn points by recycling correctly or using smart bins. These points can be tracked through the platform and exchanged for rewards such as discounts or benefits.</p>
+                <h3 class="content-title">How to use it?</h3>
+                <ul class="custom-list">
+                  <li>Register or log into the platform</li>
+                  <li>Dispose of waste properly using smart systems</li>
+                  <li>Earn points based on your actions</li>
+                  <li>Redeem rewards through the platform</li>
+                </ul>
+                <h3 class="content-title">Why it matters (2050)?</h3>
+                <ul class="custom-list">
+                  <li>Encourages people to recycle more consistently</li>
+                  <li>Promotes positive behavior change in communities</li>
+                  <li>Reduces waste and improves recycling rates</li>
+                  <li>Makes waste management more engaging and interactive</li>
+                  <li>Supports long-term sustainable habits</li>
+                  <li>Helps build environmentally responsible communities</li>
+                </ul>
+              </div>
+              <div class="card-footer-custom">
+                <a href="smart-bin.html" class="explore-btn">Explore More Ideas</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane" id="solution_swc">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="solution-card">
+              <div class="card-content">
+                <div class="card-header-custom">
+                  <div class="icon-box"><i class="bi bi-truck"></i></div>
+                  <div>
+                    <h2 class="card-title">Smart Waste Collection</h2>
+                    <p class="card-subtitle">Solution 05 of 05</p>
+                  </div>
+                </div>
+                <h3 class="content-title">What it is?</h3>
+                <p class="content-text">A system that uses data from smart bins to optimize waste collection, making the process more efficient and reducing unnecessary trips.</p>
+                <h3 class="content-title">How does it work?</h3>
+                <p class="content-text">Smart bins send real-time data about their fill levels. The system then plans the best routes for collection trucks, ensuring bins are emptied only when needed.</p>
+                <h3 class="content-title">How to use it?</h3>
+                <ul class="custom-list">
+                  <li>Use bins as normal for waste disposal</li>
+                  <li>Allow the system to monitor bin levels automatically</li>
+                  <li>Follow any instructions if bins are full</li>
+                  <li>No direct user interaction is required</li>
+                </ul>
+                <h3 class="content-title">Why it matters (2050)?</h3>
+                <ul class="custom-list">
+                  <li>Reduces unnecessary waste collection trips to save fuel & energy</li>
+                  <li>Improves efficiency of waste collection systems</li>
+                  <li>Reduces traffic and operational costs</li>
+                  <li>Supports smart city infrastructure using real-time data</li>
+                  <li>Minimizes environmental impact</li>
+                  <li>Creates cleaner and more efficient urban environments</li>
+                </ul>
+              </div>
+              <div class="card-footer-custom">
+                <a href="smart-bin.html" class="explore-btn">Explore More Ideas</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <!-- Footer -->
+  <div class="container-fluid bg-black text-white px-5 py-3">
+ 
+        <div class="row mt-3">
+ 
+            <!-- Left Side -->
+            <div class="col-md-4">
+ 
+                <h1>Zephra</h1>
+ 
+                <p class="inria-serif-regular">
+                    Smart waste management solutions for sustainable cities.
+                    Turning waste problems into opportunities through technology
+                    and community action.
+                </p>
+ 
+                <p class="inria-serif-regular">
+                    <i class="bi bi-geo-alt-fill px-1"></i>
+                    123 Green Street, Eco City 45678
+                </p>
+ 
+                <p class="inria-serif-regular">
+                    <i class="bi bi-telephone-fill px-1"></i>
+                    +1 (555) 123-4567
+                </p>
+ 
+                <p class="inria-serif-regular">
+                    <i class="bi bi-envelope px-1"></i>
+                    zephra-waste_management.com
+                </p>
+ 
+            </div>
+ 
+            <!-- Quick Links -->
+            <div class="col-md-2 footer_session">
+ 
+                <h5 class="text-warning inria-serif-regular">Quick Links</h5>
+ 
+                <a href="index.html"><p class="inria-serif-regular">Home</p></a>
+                <a href="learn.html"><p class="inria-serif-regular">Learn</p></a>
+                <a href="aboutus.html"><p class="inria-serif-regular">About us</p></a>
+                <a href="contact.html"><p class="inria-serif-regular">Contact us</p></a>
+                <a href="solution.html"><p class="inria-serif-regular">Solutions</p></a>
+ 
+            </div>
+ 
+            <!-- Resources -->
+            <div class="col-md-3 footer_session">
+ 
+                <h5 class="text-warning inria-serif-regular">Resources</h5>
+ 
+                <a href="#"><p class="inria-serif-regular">Waste Segregation</p></a>
+                <a href="#"><p class="inria-serif-regular">Recycling Programs</p></a>
+                <a href="#"><p class="inria-serif-regular">Composting</p></a>
+                <a href="#"><p class="inria-serif-regular">Reduce Plastic</p></a>
+                <a href="#"><p class="inria-serif-regular">Clean-up Campaigns</p></a>
+ 
+            </div>
+ 
+            <!-- Support -->
+            <div class="col-md-3 footer_session">
+ 
+                <h5 class="text-warning inria-serif-regular">Support</h5>
+ 
+                <a href="#"><p class="inria-serif-regular">Help Center</p></a>
+                <a href="#"><p class="inria-serif-regular">Contact Support</p></a>
+                <a href="#FAQ"><p class="inria-serif-regular">FAQ</p></a>
+ 
+                <a href="https://www.facebook.com/"><i class="bi bi-facebook fs-3 me-3"></i></a>
+                <a href="https://web.telegram.org/"><i class="bi bi-telegram fs-3 me-3"></i></a>
+                <a href="https://www.instagram.com/"><i class="bi bi-instagram fs-3"></i></a>
+ 
+            </div>
+ 
+        </div>
+ 
+        <hr>
+ 
+        <!-- Bottom Footer -->
+        <div class="row">
+ 
+            <div class="col-md-6">
+                <p class="inria-serif-regular">© 2026 Waste Management Project</p>
+            </div>
+ 
+            <div class="col-md-6 text-md-end">
+ 
+                <a href="#"><span class="me-3 inria-serif-regular">Privacy Policy</span></a>
+                <a href="#"><span class="me-3 inria-serif-regular">Terms of Service</span></a>
+                <a href="#"><span class="inria-serif-regular">Cookie Policy</span></a>
+ 
+            </div>
+ 
+        </div>
+ 
+  </div>
+ 
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+</body>
+</html>
