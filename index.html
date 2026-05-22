@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZEPHRA | Home</title>
+
+    <!-- Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <style>
+    /* Home section 1 */
+    .navbar-nav .nav-link{
+    color: white;
+    transition: 0.3s;
+    position: relative;
+    }
+
+
+    .navbar-nav .nav-link:hover{
+    color: #ffc107;
+    }
+   .navbar-nav .nav-link.active{
+    color: #ffc107 !important;
+    }
+
+    .dropdown-item{
+        transition: 0.3s;
+        color: #c5a059;
+    }
+    .dropdown-item:hover{
+        background-color: #ffc107;
+        color: white;
+    }
+
+    /* Home section 5 */
+    .faq-section{
+      padding: 70px 0;
+    }
+
+    .faq-tag{
+      border: 1px solid #ffc107;
+      border-radius: 50px;
+      color: #9bb15b;
+      font-size: 10px;
+      padding: 2px 10px;
+      width: fit-content;
+    }
+
+    .faq-title{
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      color: #3f3128;
+      line-height: 1.2;
+    }
+
+    .faq-title span{
+      color: #ffc107;
+      display: inline-block;
+      transform: skewX(-12deg);
+      font-style: italic;
+    }
+
+    .faq-subq{
+      max-width: 540px;
+      font-size: 16px;
+      color: #777;
+      line-height: 1.6;
+    }
+
+    .faq-box{
+      border: 1.5px solid #ffc107;
+      border-radius: 12px;
+      overflow: hidden;
+      background: transparent;
+      transition: 0.3s;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    }
+    .faq-box:hover{
+      transform: translateY(-10px);
+    }
+    
+
+    .accordion-item{
+      background: transparent;
+    }
+
+    .accordion-button{
+      background: transparent !important;
+      box-shadow: none !important;
+      color: #3f3128;
+      font-size: clamp(14px, 2vw, 18px);
+      padding: 18px 20px;
+    }
+
+    .accordion-button:not(.collapsed){
+      color: #3f3128;
+    }
+
+    .accordion-body{
+      color: #666;
+      font-size: 14px;
+      line-height: 1.7;
+      padding-top: 0;
+    }
+
+    .accordion-button::after{
+      background-image: none !important;
+      content: "+";
+      font-size: 30px;
+      width: auto;
+      height: auto;
+      transform: none !important;
+    }
+
+    .accordion-button:not(.collapsed)::after{
+      content: "—";
+      font-size: 26px;
+    }
+
+    /* footer */
+    .inria-serif-light {
+      font-family: "Inria Serif", serif;
+      font-weight: 300;
+      font-style: normal;
+    }
+
+    .inria-serif-regular {
+      font-family: "Inria Serif", serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    .inria-serif-bold {
+      font-family: "Inria Serif", serif;
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    .inria-serif-light-italic {
+      font-family: "Inria Serif", serif;
+      font-weight: 300;
+      font-style: italic;
+    }
+
+    .inria-serif-regular-italic {
+      font-family: "Inria Serif", serif;
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    .inria-serif-bold-italic {
+      font-family: "Inria Serif", serif;
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    a{
+      text-decoration: none;
+      color: white;
+    }
+    a:hover{
+        text-decoration: underline;
+    }
+
+    @media screen and (max-width:768px){
+        .footer_session{
+            margin-top: 25px;
+        }
+    }
+
+      /* Feature */
+    .features-section {
+      background: linear-gradient(rgba(45, 42, 40, 0.95), rgba(45, 42, 40, 0.95)), url('img/city.img.png');
+      background-size: cover;
+      background-position: center;
+      padding: 80px 0;
+      color: #f5f2eb;
+    }
+
+    
+    .text-accent {
+      color: #ffc107;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+    }
+
+    
+    .slider-btn {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background-color: #ffc107;
+      color: #2b2826;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: opacity 0.2s;
+    }
+    .slider-btn:hover {
+      opacity: 0.9;
+      color: #2b2826;
+      
+    }
+
+    
+    .feature-card {
+      background-color: #f9f7f2;
+      border-radius: 12px;
+      padding: 30px;
+      height: 100%;
+      color: #2a2725;
+      border: none;
+      display: flex;
+      flex-direction: column;
+      transition: 0.3s;
+    }
+    .feature-card:hover {
+      transform: translateY(-10px);
+    }
+
+    
+    .icon-badge {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 2px solid #9ba084;
+      color: #9ba084;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 25px;
+    }
+
+    
+    .card-link-text {
+      color: #9ba084;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body style="font-family: 'Inria Serif', serif; background-color:white" id="Home">
+  <nav class="navbar navbar-expand-lg navbar-dark pt-3" style="padding-top: 20px; position: fixed; top: 0; width: 100%; z-index: 999; background-color: rgba(0, 0, 0, 0.267);">
+        <div class="container-fluid px-4 px-lg-5">
+          
+            <a href="#" class="navbar-brand fw-bold fs-2">
+                <img src="pbl_image/logo.png" alt="logo" style="width: auto; height: clamp(30px, 3vw, 50px);">
+            </a>
+          
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+          
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav mx-auto" style="gap: 8px;">
+                    <li class="nav-item"><a class="nav-link px-lg-3 active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3" href="learn.html">Learn</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3" href="aboutus.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3" href="contact.html">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3" href="solution.html">Solutions</a></li>
+                </ul>
+
+                <div class="d-flex align-items-center justify-content-center mt-3 mt-lg-0">
+                
+                    <input class="form-control rounded-pill border-0 me-3 d-none d-lg-block" type="text" placeholder="Search" style="width: min(260px, 90vw); height: 36px; background:white">
+                  
+                    <div class="dropdown">
+                        <a href="#" class="text-white text-decoration-none" data-bs-toggle="dropdown">
+                            <i class="bi bi-person-circle fs-1"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end p-3 border-0 shadow rounded-4" style="width: 260px;">
+                            <li><a class="dropdown-item rounded-3 py-3 d-flex align-items-center gap-3" href="#"><i class="bi bi-person"></i> Profile</a></li>
+                            <li><a class="dropdown-item rounded-3 py-3 d-flex align-items-center gap-3" href="#"><i class="bi bi-chat"></i> Community</a></li>
+                            <li><a class="dropdown-item rounded-3 py-3 d-flex align-items-center gap-3" href="#"><i class="bi bi-gear"></i> Settings</a></li>
+                            <li><a class="dropdown-item rounded-3 py-3 d-flex align-items-center gap-3" href="#"><i class="bi bi-info-circle"></i> Help Center</a></li>
+                            <li><a class="dropdown-item rounded-3 py-3 d-flex align-items-center gap-3" href="#"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+  </nav>
+    <!-- Home section 1 -->
+  <div class="container-fluid d-flex flex-column text-white text-center"  
+     style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('pbl_image/home_hero_city.png') no-repeat center center/cover; min-height: 100vh; padding-top: 80px;">
+   
+    <!-- Content Area -->
+    <div class="container flex-grow-1 d-flex flex-column justify-content-center align-items-center " style="margin-top: clamp(-20px, -5vw, -70px);">
+       
+        <span class="badge rounded-pill text-white px-3 py-2  mb-md-4" style="background-color: #c5a059; letter-spacing: 1px;">
+            SMART CITY PROJECT
+        </span>
+       
+        <h1 class="display-4 display-md-2 fw-bold mb-3">
+            Turn Waste into <br class="d-md-none">
+            <span class="fw-light fst-italic" style="color: #c5a059; display: inline-block;transform: skewX(-9deg)">Smart Solutions</span>
+        </h1>
+       
+        <p class="col-11 col-md-8 col-lg-6 lead opacity-75 mb-4 mb-md-5" style="font-size: 15px; line-height: 1.4; letter-spacing: 1px; ">
+            Explore how technology and innovation can help reduce waste and improve
+            urban life. Learn how smart and sustainable solutions can make cities
+            cleaner, healthier, and more efficient for everyone.
+        </p>
+ 
+        <a href="learn.html" class="btn btn-outline-light px-4 py-3 fw-semibold rounded-3">
+            LEARN MORE
+        </a>
+       
+    </div>
+  </div>
+
+    <!-- Home section 2-->
+    <section class="py-5">
+    <div class="container">
+      <div class="row align-items-center g-5">
+ 
+        <!-- Left Content -->
+        <div class="col-lg-7">
+ 
+          <p class="text-uppercase small fw-semibold mb-3" style="color: #ffc107 ;">
+            Did You Know?
+          </p>
+ 
+          <h1
+            class="fw-normal lh-sm mb-4"
+            style="font-size: 60px; color: #464529;"
+          >
+            Waste Affects
+            <span class="fst-italic" style="color: #ffc107; transform: skewX(-12deg); display: inline-block;">More Than</span>
+            You Think
+          </h1>
+ 
+          <p class="text-secondary mb-4 py-4" style="font-size: 16px; margin-left: 120px;">
+            Waste management is one of the most serious challenges in today’s sustainable cities, especially in Myanmar in 2025–2026. With cities growing rapidly, populations increasing, and infrastructure remaining limited, it is becoming harder to collect, sort, and properly dispose of waste. In many places, waste is still dumped in open areas or burned, which causes pollution and harms both the environment and public health. This makes waste management a crucial issue that affects the cleanliness, safety, and livability of a city.
+          </p>
+ 
+          <p class="text-secondary mb-5 " style="font-size: 16px; margin-left: 120px;">
+           n Yangon, waste management remains a major challenge due to overflowing garbage, poor waste collection, and limited recycling systems. Plastic waste and improper disposal often clog drainage systems, causing flooding and health risks, especially during the rainy season. Therefore, improving waste management through smarter and more sustainable solutions is important for building a better urban future.
+          </p>
+ 
+        </div>
+ 
+        <!-- Right Image -->
+        <div class="col-lg-5 text-center">
+ 
+          <img src="pbl_image/home_bin.png"  alt="Waste Bin" class="img-fluid object-fit-cover" style="width: 700px; height: 560px;">
+           
+        </div>
+ 
+      </div>
+    </div>
+    </section>
+ 
+    <!-- purpose section -->
+   <section class="purpose-section py-5" >
+ 
+    <div class="container text-center">
+ 
+      <h2
+        class="fw-normal mb-3"
+        style="font-size: 60px;color: #464529;"
+      >
+        Purpose of This Website
+      </h2>
+ 
+      <p class="text-secondary small mb-5">
+        This website exists to educate, inspire, and empower people to take
+        action for a cleaner, greener future.
+      </p>
+ 
+      <div class="row justify-content-center g-2 mt-4">
+ 
+        <!-- card 1 -->
+        <div class="col-md-4">
+ 
+          <div
+            class="bg-white d-inline-flex justify-content-center align-items-center mb-4"
+            style="width: 170px; height: 170px;"
+          >
+            <i class="bi bi-megaphone" style="font-size: 130px; color: #ffc107;"></i>
+          </div>
+ 
+          <h5
+            class="fw-normal mb-3">
+            Raise Awareness
+          </h5>
+ 
+          <p class="text-secondary small lh-lg px-3">
+            This website aims to increase awareness about waste management issues and how they affect sustainable cities, public health, and the environment.
+          </p>
+ 
+        </div>
+ 
+        <!-- card 2 -->
+        <div class="col-md-4">
+ 
+          <div
+            class="bg-white d-inline-flex justify-content-center align-items-center mb-4"
+            style="width: 170px; height: 170px;"
+          >
+            <i class="bi bi-people" style="font-size: 130px; color: #ffc107;"></i>
+          </div>
+ 
+          <h5
+            class="fw-normal mb-3">
+            Encourage Action
+          </h5>
+ 
+          <p class="text-secondary small lh-lg px-3">
+            The website encourages people to adopt better waste management habits and make more environmentally responsible choices in their daily lives.
+          </p>
+ 
+        </div>
+ 
+        <!-- card 3 -->
+        <div class="col-md-4">
+ 
+          <div
+            class="bg-white d-inline-flex justify-content-center align-items-center mb-4"
+            style="width: 170px; height: 170px;"
+          >
+            <i class="bi bi-bar-chart-line" style="font-size: 130px; color: #ffc107;"></i>
+          </div>
+ 
+          <h5
+            class="fw-normal mb-3">
+            Promote Sustainable Solutions
+          </h5>
+ 
+          <p class="text-secondary small lh-lg px-3">
+           The website shares practical solutions such as recycling, waste segregation, reusable alternatives, community activities, and technology-based ideas to support cleaner and more sustainable cities by 2040.
+          </p>
+ 
+        </div>
+ 
+      </div>
+ 
+    </div>
+ 
+   </section>
+
+    <!-- Home section 4 -->
+<section class="features-section">
+    <div class="container">
+
+        <!-- Desktop Version -->
+        <div class="d-none d-md-block">
+
+            <div class="row align-items-end mb-5">
+                <div class="col-8">
+                    <span class="text-accent fw-bold text-uppercase d-block mb-2">LEARN MORE</span>
+                    <h2 class="display-4 fw-serif mb-4">Features</h2>
+                    <p class="opacity-75 col-lg-10 lead fs-6 mb-0">
+                        Interested in learning more about waste management and how you can make a difference? Explore more to get started.
+                    </p>
+                </div>
+                <div class="col-4 text-end mb-2">
+                    <button class="slider-btn me-2 border-0" type="button" data-bs-target="#desktopCarousel" data-bs-slide="prev">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <button class="slider-btn border-0" type="button" data-bs-target="#desktopCarousel" data-bs-slide="next">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="desktopCarousel" class="carousel slide" data-bs-ride="false">
+                <div class="carousel-inner">
+
+                    <!-- Slide 1 -->
+                    <div class="carousel-item active">
+                        <div class="row g-4">
+                            <div class="col-md-6 col-lg-3">
+                                <div class="card feature-card">
+                                    <div class="icon-badge"><i class="bi bi-trash3"></i></div>
+                                    <h4 class="fw-bold mb-3 fs-5">Proper Waste Segregation</h4>
+                                    <p class="text-muted small mb-4">Poor waste management leads to environmental pollution, health risks, and damage to ecosystems.</p>
+                                    <a href="#" class="card-link-text mt-auto">Explore More</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                                <div class="card feature-card">
+                                    <div class="icon-badge"><i class="bi bi-recycle"></i></div>
+                                    <h4 class="fw-bold mb-3 fs-5">Recycling Programs</h4>
+                                    <p class="text-muted small mb-4">Recycling programs reduce landfill waste and conserve natural resources by reusing materials.</p>
+                                    <a href="#" class="card-link-text mt-auto">Explore More</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                                <div class="card feature-card">
+                                    <div class="icon-badge"><i class="bi bi-tree"></i></div>
+                                    <h4 class="fw-bold mb-3 fs-5">Composting Organic Waste</h4>
+                                    <p class="text-muted small mb-4">Composting turns food scraps into nutrient-rich fertilizers, reducing landfill waste production.</p>
+                                    <a href="#" class="card-link-text mt-auto">Explore More</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                                <div class="card feature-card">
+                                    <div class="icon-badge"><i class="bi bi-people"></i></div>
+                                    <h4 class="fw-bold mb-3 fs-5">Clean-up Campaigns</h4>
+                                    <p class="text-muted small mb-4">Community efforts bring people together to clean public spaces and raise critical awareness.</p>
+                                    <a href="#" class="card-link-text mt-auto">Explore More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="carousel-item">
+                        <div class="row g-4">
+                            <div class="col-md-6 col-lg-3">
+                                <div class="card feature-card">
+                                    <div class="icon-badge"><i class="bi bi-ban"></i></div>
+                                    <h4 class="fw-bold mb-3 fs-5">Reducing Plastic</h4>
+                                    <p class="text-muted small mb-4">Minimizing plastic consumption protects our beautiful city landscapes and water channels.</p>
+                                    <a href="#" class="card-link-text mt-auto">Explore More</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                                <div class="card feature-card">
+                                    <div class="icon-badge"><i class="bi bi-lightbulb"></i></div>
+                                    <h4 class="fw-bold mb-3 fs-5">Environmental Education</h4>
+                                    <p class="text-muted small mb-4">Educating the public about environmental issues fosters a culture of sustainability and conservation.</p>
+                                    <a href="#" class="card-link-text mt-auto">Explore More</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                                <div class="card feature-card">
+                                    <div class="icon-badge"><i class="bi bi-droplet"></i></div>
+                                    <h4 class="fw-bold mb-3 fs-5">Technology Solutions</h4>
+                                    <p class="text-muted small mb-4">Explore smart technologies and digital solutions for better waste management.</p>
+                                    <a href="#" class="card-link-text mt-auto">Explore More</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                                <div class="card feature-card">
+                                    <div class="icon-badge"><i class="bi bi-globe"></i></div>
+                                    <h4 class="fw-bold mb-3 fs-5">Government Rules & Policies</h4>
+                                    <p class="text-muted small mb-4">Learn about regulations and policies related to waste and environmental protection.</p>
+                                    <a href="#" class="card-link-text mt-auto">Explore More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Version -->
+        <div class="d-block d-md-none">
+
+            <div class="row align-items-center mb-4">
+                <div class="col-8">
+                    <span class="text-accent fw-bold text-uppercase d-block mb-1">LEARN MORE</span>
+                    <h2 class="h1 fw-serif mb-0">Features</h2>
+                </div>
+                <div class="col-4 text-end">
+                    <button class="slider-btn me-1 border-0" type="button" data-bs-target="#mobileCarousel" data-bs-slide="prev">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <button class="slider-btn border-0" type="button" data-bs-target="#mobileCarousel" data-bs-slide="next">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="col-12 mt-3">
+                    <p class="opacity-75 small mb-0">
+                        Interested in learning more about waste management and how you can make a difference? Explore more to get started.
+                    </p>
+                </div>
+            </div>
+
+            <div id="mobileCarousel" class="carousel slide" data-bs-ride="false">
+                <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                        <div class="card feature-card">
+                            <div class="icon-badge"><i class="bi bi-trash3"></i></div>
+                            <h4 class="fw-bold mb-3 fs-5">Proper Waste Segregation</h4>
+                            <p class="text-muted small mb-4">Poor waste management leads to environmental pollution, health risks, and damage to ecosystems.</p>
+                            <a href="#" class="card-link-text">Explore More</a>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="card feature-card">
+                            <div class="icon-badge"><i class="bi bi-recycle"></i></div>
+                            <h4 class="fw-bold mb-3 fs-5">Recycling Programs</h4>
+                            <p class="text-muted small mb-4">Recycling programs reduce landfill waste and conserve natural resources by reusing materials.</p>
+                            <a href="#" class="card-link-text">Explore More</a>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="card feature-card">
+                            <div class="icon-badge"><i class="bi bi-tree"></i></div>
+                            <h4 class="fw-bold mb-3 fs-5">Composting Organic Waste</h4>
+                            <p class="text-muted small mb-4">Composting turns food scraps into nutrient-rich fertilizers, reducing landfill waste production.</p>
+                            <a href="#" class="card-link-text">Explore More</a>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="card feature-card">
+                            <div class="icon-badge"><i class="bi bi-people"></i></div>
+                            <h4 class="fw-bold mb-3 fs-5">Clean-up Campaigns</h4>
+                            <p class="text-muted small mb-4">Community efforts bring people together to clean public spaces and raise critical awareness.</p>
+                            <a href="#" class="card-link-text">Explore More</a>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="card feature-card">
+                            <div class="icon-badge"><i class="bi bi-ban"></i></div>
+                            <h4 class="fw-bold mb-3 fs-5">Reducing Plastic</h4>
+                            <p class="text-muted small mb-4">Minimizing plastic consumption protects our beautiful city landscapes and water channels.</p>
+                            <a href="#" class="card-link-text">Explore More</a>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="card feature-card">
+                            <div class="icon-badge"><i class="bi bi-lightbulb"></i></div>
+                            <h4 class="fw-bold mb-3 fs-5">Environmental Education</h4>
+                            <p class="text-muted small mb-4">Educating the public about environmental issues fosters a culture of sustainability and conservation.</p>
+                            <a href="#" class="card-link-text">Explore More</a>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="card feature-card">
+                            <div class="icon-badge"><i class="bi bi-droplet"></i></div>
+                            <h4 class="fw-bold mb-3 fs-5">Clean Water Protection</h4>
+                            <p class="text-muted small mb-4">Proper waste disposal prevents plastics and harmful chemicals from polluting waterways.</p>
+                            <a href="#" class="card-link-text">Explore More</a>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="card feature-card">
+                            <div class="icon-badge"><i class="bi bi-globe"></i></div>
+                            <h4 class="fw-bold mb-3 fs-5">Sustainable Cities</h4>
+                            <p class="text-muted small mb-4">Smart waste systems help create cleaner, healthier, and more eco-friendly urban environments.</p>
+                            <a href="#" class="card-link-text">Explore More</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+ 
+
+   <!-- Home section 5 -->
+    <section class="faq-section container-fluid" id="FAQ" style="padding: 60px 0;margin-bottom: 40px;">
+
+   <div class="container">
+
+    <div class="mb-5">
+
+      <div class="faq-tag mb-3">/FAQS</div>
+
+      <h1 class="faq-title mb-3">Frequently asked <span>questions</span></h1>
+      <p class="faq-subq">Have questions about waste management?Here are some quick answers to help youunderstand and take action.</p>
+
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-lg-6 d-flex flex-column gap-4">
+        <div class="accordion faq-box" id="faqLeft">
+          <div class="accordion-item border-0">
+
+            <h2 class="accordion-header">
+
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                What does a waste holder mean?
+              </button>
+
+            </h2>
+
+            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqLeft">
+
+              <div class="accordion-body">
+                A waste holder refers to a person,household, or organization responsible for managing and disposing of waste properly.
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="accordion faq-box">
+          <div class="accordion-item border-0">
+            <h2 class="accordion-header">
+              
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                Are there cases where paper cannot be recycled?
+              </button>
+            </h2>
+
+            <div id="faq2" class="accordion-collapse collapse">
+
+              <div class="accordion-body">
+                Yes. Paper contaminated with food,oil, or chemicals may not be recyclable.
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="accordion faq-box">
+          <div class="accordion-item border-0">
+            <h2 class="accordion-header">
+              
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                What happens to waste after it is collected?
+              </button>
+            </h2>
+
+            <div id="faq3" class="accordion-collapse collapse">
+
+              <div class="accordion-body">
+                Collected waste may be recycled,composted, or safely disposed ofdepending on the material type.
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="accordion faq-box">
+          <div class="accordion-item border-0">
+            <h2 class="accordion-header">
+              
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                How can communities improve waste management?
+              </button>
+            </h2>
+
+            <div id="faq4" class="accordion-collapse collapse">
+
+              <div class="accordion-body">
+                Communities can improve waste management by promoting recycling programs,organizing clean-up events, and educating residents about proper waste disposal.
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="col-lg-6 d-flex flex-column gap-4">
+        <div class="accordion faq-box">
+          <div class="accordion-item border-0">
+
+            <h2 class="accordion-header">
+
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                What is proper waste segregation?
+              </button>
+
+            </h2>
+
+            <div id="faq5" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                Waste segregation means separating recyclable, organic, and non-recyclable waste into categories.
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="accordion faq-box">
+          <div class="accordion-item border-0">
+            <h2 class="accordion-header">
+
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6"> 
+                Why is waste segregation important?
+              </button>
+
+            </h2>
+
+            <div id="faq6" class="accordion-collapse collapse">
+              <div class="accordion-body">
+               Waste segregation helps reduce pollution, improve recycling, decrease landfill waste, and protect public health and the environment.
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="accordion faq-box">
+          <div class="accordion-item border-0">
+
+            <h2 class="accordion-header">
+
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+                How can I separate waste at home?
+              </button>
+
+            </h2>
+
+            <div id="faq7" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                You can separate waste at home by using labeled or color-coded bins for organic waste, recyclables, and non-recyclable waste, while keeping recyclable items clean and dry.
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="accordion faq-box">
+          <div class="accordion-item border-0">
+            <h2 class="accordion-header">
+
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">
+                How can technology help improve waste management?
+              </button>
+
+            </h2>
+
+            <div id="faq8" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                Technology can improve waste management through smart bins that monitor fill levels, automated sorting systems, and digital platforms for reporting and tracking waste collection and processing.
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+    </section>
+
+    <!-- Footer -->
+    <div class="container-fluid bg-black text-white px-5 py-3">
+ 
+        <div class="row mt-3">
+ 
+            <!-- Left Side -->
+            <div class="col-md-4">
+ 
+                <h1>Zephra</h1>
+ 
+                <p class="inria-serif-regular">
+                    Smart waste management solutions for sustainable cities.
+                    Turning waste problems into opportunities through technology
+                    and community action.
+                </p>
+ 
+                <p class="inria-serif-regular">
+                    <i class="bi bi-geo-alt-fill px-1"></i>
+                    123 Green Street, Eco City 45678
+                </p>
+ 
+                <p class="inria-serif-regular">
+                    <i class="bi bi-telephone-fill px-1"></i>
+                    +1 (555) 123-4567
+                </p>
+ 
+                <p class="inria-serif-regular">
+                    <i class="bi bi-envelope px-1"></i>
+                    zephra-waste_management.com
+                </p>
+ 
+            </div>
+ 
+            <!-- Quick Links -->
+            <div class="col-md-2 footer_session">
+ 
+                <h5 class="text-warning inria-serif-regular">Quick Links</h5>
+ 
+                <a href="index.html"><p class="inria-serif-regular">Home</p></a>
+                <a href="learn.html"><p class="inria-serif-regular">Learn</p></a>
+                <a href="aboutus.html"><p class="inria-serif-regular">About us</p></a>
+                <a href="contact.html"><p class="inria-serif-regular">Contact us</p></a>
+                <a href="solution.html"><p class="inria-serif-regular">Solutions</p></a>
+ 
+            </div>
+ 
+            <!-- Resources -->
+            <div class="col-md-3 footer_session">
+ 
+                <h5 class="text-warning inria-serif-regular">Resources</h5>
+ 
+                <a href="#"><p class="inria-serif-regular">Waste Segregation</p></a>
+                <a href="#"><p class="inria-serif-regular">Recycling Programs</p></a>
+                <a href="#"><p class="inria-serif-regular">Composting</p></a>
+                <a href="#"><p class="inria-serif-regular">Reduce Plastic</p></a>
+                <a href="#"><p class="inria-serif-regular">Clean-up Campaigns</p></a>
+ 
+            </div>
+ 
+            <!-- Support -->
+            <div class="col-md-3 footer_session">
+ 
+                <h5 class="text-warning inria-serif-regular">Support</h5>
+ 
+                <a href="#"><p class="inria-serif-regular">Help Center</p></a>
+                <a href="#"><p class="inria-serif-regular">Contact Support</p></a>
+                <a href="#FAQ"><p class="inria-serif-regular">FAQ</p></a>
+ 
+                <a href="https://www.facebook.com/"><i class="bi bi-facebook fs-3 me-3"></i></a>
+                <a href="https://web.telegram.org/"><i class="bi bi-telegram fs-3 me-3"></i></a>
+                <a href="https://www.instagram.com/"><i class="bi bi-instagram fs-3"></i></a>
+ 
+            </div>
+ 
+        </div>
+ 
+        <hr>
+ 
+        <!-- Bottom Footer -->
+        <div class="row">
+ 
+            <div class="col-md-6">
+                <p class="inria-serif-regular">© 2026 Waste Management Project</p>
+            </div>
+ 
+            <div class="col-md-6 text-md-end">
+ 
+                <a href="#"><span class="me-3 inria-serif-regular">Privacy Policy</span></a>
+                <a href="#"><span class="me-3 inria-serif-regular">Terms of Service</span></a>
+                <a href="#"><span class="inria-serif-regular">Cookie Policy</span></a>
+ 
+            </div>
+ 
+        </div>
+ 
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({  });
+  </script>
+</body>
+</html>
