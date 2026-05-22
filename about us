@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <!--Bootstrap CDN Links-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!--Bootstrap CDN icon Links-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <title>ZEPHRA | About Us</title>
+ 
+  <style>
+ 
+    body{
+      background:white;
+      font-family:'Inria Serif', serif;
+    }
+ 
+    /* ================= ABOUT SECTION ================= */
+  .navbar-nav .nav-link{
+    color: white;
+    transition: 0.3s;
+    position: relative;
+  }
+
+
+  .navbar-nav .nav-link:hover{
+    color: #ffc107;
+  }
+  .navbar-nav .nav-link.active{
+    color: #ffc107 !important;
+  }
+
+  .dropdown-item{
+        transition: 0.3s;
+        color: #c5a059;
+  }
+  .dropdown-item:hover{
+        background-color: #ffc107;
+        color: white;
+  }
+
+
+    .about-section{
+      padding:80px 0 40px;
+    }
+ 
+    .small-title{
+      color:#ffc107;
+      font-size:14px;
+      font-weight:700;
+      letter-spacing:1px;
+      margin-bottom:10px;
+    }
+ 
+    .main-title{
+      font-family:'Playfair Display', serif;
+      font-size:58px;
+      color:#6b5b4d;
+      margin-bottom:25px;
+      line-height:1.2;
+    }
+ 
+    .main-title span{
+      color:#ffc107;
+      font-style:italic;
+    }
+ 
+    .about-text{
+      color:#6d6d6d;
+      line-height:1.9;
+      font-size:15px;
+      max-width:560px;
+    }
+ 
+    .logo-box{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+ 
+    .logo-box img{
+      width:220px;
+      max-width:100%;
+    }
+ 
+    /* ================= TEAM SECTION ================= */
+ 
+    .team-title{
+      text-align:center;
+      font-size:50px;
+      font-weight:800;
+      color:white;
+      margin-top:70px;
+      font-family:'Playfair Display', serif;
+    }
+ 
+    .team-subtitle{
+      text-align:center;
+      color:white;
+      margin-bottom:50px;
+      font-size:15px;
+    }
+ 
+    .team-card{
+      background:#fff;
+      border-radius:25px;
+      padding:30px 20px;
+      text-align:center;
+      height:100%;
+      transition:0.4s;
+      border:1px solid rgba(0,0,0,0.04);
+      box-shadow:0 10px 30px rgba(0,0,0,0.05);
+    }
+ 
+    .team-card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 20px 40px rgba(0,0,0,0.12);
+    }
+ 
+    .team-img{
+      width:100px;
+      height:100px;
+      border-radius:50%;
+      object-fit:cover;
+      border:4px solid #ffc107;
+      margin-bottom:18px;
+    }
+ 
+    .name{
+      font-size:20px;
+      font-weight:700;
+      color:#222;
+      margin-bottom:4px;
+    }
+ 
+    .role{
+      color:#999;
+      font-size:14px;
+      margin-bottom:18px;
+      letter-spacing:1px;
+    }
+ 
+    .social i{
+      font-size:17px;
+      margin:0 7px;
+      color:#666;
+      transition:0.3s;
+      cursor:pointer;
+    }
+ 
+    .social i:hover{
+      color:#ffc107;
+      transform:scale(1.15);
+    }
+ 
+    @media(max-width:768px){
+ 
+      .main-title{
+        font-size:40px;
+      }
+ 
+      .team-title{
+        font-size:38px;
+      }
+ 
+      .logo-box{
+        margin-top:40px;
+      }
+ 
+    }
+ 
+ 
+     .purpose-section{
+    background:#f6f8fc;
+  }
+ 
+  .purpose-box{
+    padding:35px 10px;
+    border-bottom:3px solid rgba(0,0,0,0.08);
+  }
+ 
+  .purpose-icon{
+    font-size:60px;
+    color:#ffc107;
+  }
+ 
+  .purpose-title{
+    font-family:'Playfair Display', serif;
+    font-size:38px;
+    color:#222;
+    margin-bottom:15px;
+  }
+ 
+  .purpose-text{
+    color:#666;
+    font-size:16px;
+    line-height:2;
+    max-width:850px;
+  }
+ 
+  @media(max-width:768px){
+ 
+    .purpose-title{
+      font-size:30px;
+      text-align:center;
+      margin-top:20px;
+    }
+ 
+    .purpose-text{
+      text-align:center;
+      font-size:15px;
+    }
+ 
+    .purpose-icon{
+      font-size:50px;
+    }
+ 
+  }
+ 
+  .about-section{
+    border-bottom:3px solid rgba(0,0,0,0.08);
+    padding-bottom:70px;
+  }
+  .inria-serif-light {
+    font-family: "Inria Serif", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+ 
+  .inria-serif-regular {
+    font-family: "Inria Serif", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+ 
+  .inria-serif-bold {
+    font-family: "Inria Serif", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+ 
+  .inria-serif-light-italic {
+    font-family: "Inria Serif", serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+ 
+  .inria-serif-regular-italic {
+    font-family: "Inria Serif", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+ 
+  .inria-serif-bold-italic {
+    font-family: "Inria Serif", serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+ 
+  a{
+    text-decoration: none;
+    color: white;
+  }
+  a:hover{
+    text-decoration: underline;
+  }
+ 
+  @media screen and (max-width:768px){
+    .footer_session{
+      margin-top: 25px;
+    }
+  }
+ 
+  </style>
+</head>
+ 
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark pt-3" style="padding-top: 20px; position: fixed; top: 0; width: 100%; z-index: 999; background-color: rgba(0, 0, 0, 0.267);">
+          <div class="container-fluid px-4 px-lg-5">
+            
+              <a href="#" class="navbar-brand fw-bold fs-2">
+                  <img src="pbl_image/logo.png" alt="logo" style="width: auto; height: clamp(30px, 3vw, 50px);">
+              </a>
+            
+              <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+  
+            
+              <div class="collapse navbar-collapse" id="navMenu">
+                  <ul class="navbar-nav mx-auto" style="gap: 8px;">
+                      <li class="nav-item"><a class="nav-link px-lg-3" href="index.html">Home</a></li>
+                      <li class="nav-item"><a class="nav-link px-lg-3" href="learn.html">Learn</a></li>
+                      <li class="nav-item"><a class="nav-link px-lg-3 active" href="aboutus.html">About Us</a></li>
+                      <li class="nav-item"><a class="nav-link px-lg-3" href="contact.html">Contact Us</a></li>
+                      <li class="nav-item"><a class="nav-link px-lg-3" href="solution.html">Solutions</a></li>
+                  </ul>
+  
+                  <div class="d-flex align-items-center justify-content-center mt-3 mt-lg-0">
+                  
+                      <input class="form-control rounded-pill border-0 me-3 d-none d-lg-block" type="text" placeholder="Search" style="width: min(260px, 90vw); height: 36px; background:white">
+                    
+                      <div class="dropdown">
+                          <a href="#" class="text-white text-decoration-none" data-bs-toggle="dropdown">
+                              <i class="bi bi-person-circle fs-1"></i>
+                          </a>
+                          <ul class="dropdown-menu dropdown-menu-end p-3 border-0 shadow rounded-4" style="width: 260px;">
+                              <li><a class="dropdown-item rounded-3 py-3 d-flex align-items-center gap-3" href="#"><i class="bi bi-person"></i> Profile</a></li>
+                              <li><a class="dropdown-item rounded-3 py-3 d-flex align-items-center gap-3" href="#"><i class="bi bi-chat"></i> Community</a></li>
+                              <li><a class="dropdown-item rounded-3 py-3 d-flex align-items-center gap-3" href="#"><i class="bi bi-gear"></i> Settings</a></li>
+                              <li><a class="dropdown-item rounded-3 py-3 d-flex align-items-center gap-3" href="#"><i class="bi bi-info-circle"></i> Help Center</a></li>
+                              <li><a class="dropdown-item rounded-3 py-3 d-flex align-items-center gap-3" href="#"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+    </nav>
+    <!-- ================= ABOUT SECTION ================= -->
+ 
+    <section class="about-section">
+        <div class="container">
+        
+            <div class="row align-items-center">
+        
+                <div class="col-lg-7">
+            
+                    <div class="small-title">Who are we?</div>
+            
+                        <h1 class="main-title">
+                        Us <span>And Our Team</span>
+                        </h1>
+                
+                        <p class="about-text">
+                        At Zephras, we are committed to educating and developing our website
+                        to educate and persuade positive environmental change. Our website
+                        is focused on the key issues of sustainability: waste management,
+                        3Rs, and other eco-friendly practices for the preservation of our planet.
+                        </p>
+                
+                    </div>
+            
+                    <div class="col-lg-5">
+                        <div class="logo-box">
+                        <img src="pbl_image/logo_notext.png" alt="logo">
+                    </div>
+                </div>
+        
+            </div>
+        
+        </div>
+    </section>
+    
+    <!-- ================= TEAM SECTION ================= -->
+    
+    <div class="container-fluid pb-5" style="background: linear-gradient(rgba(23, 14, 0, 0.65), rgba(19, 12, 0, 0.65)), url(pbl_image/aboutus_plant.webp); width: 100%; height: auto;">
+    
+        <div class="team-title">Our Team</div>
+        <div class="team-subtitle">
+            Meet the people behind the project
+        </div>
+    
+        <div class="row g-4 justify-content-center">
+        
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="team-card">
+                    <img src="image/thiri.jpg" class="team-img">
+            
+                    <div class="name">Thiri Htet San</div>
+                    <div class="role"><p>"Take responsibility for combining all the written code from individual members, as well as designing the dashboard."</p></div>
+            
+                    <div class="social">
+                        <i class="bi bi-facebook"></i>
+                        <i class="bi bi-instagram"></i>
+                        <i class="bi bi-linkedin"></i>
+                    </div>
+            
+                </div>
+            </div>
+        
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="team-card">
+            
+                    <img src="image/thu.jpg" class="team-img">
+            
+                    <div class="name">Thu Thu Han Thar</div>
+                    <div class="role"><p>"Cooperate in writing different sections, design the footer, and take responsibility for adjusting codes and design."</p></div>
+            
+                    <div class="social">
+                        <i class="bi bi-facebook"></i>
+                        <i class="bi bi-instagram"></i>
+                        <i class="bi bi-linkedin"></i>
+                    </div>
+            
+                </div>
+            </div>
+        
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="team-card">
+            
+                    <img src="image/zin.jpg" class="team-img">
+            
+                    <div class="name">Zin Yadanar</div>
+                    <div class="role"><p>"Help make pages and sections of various pages, while also designing the contact us page, and about us. "</p></div>
+            
+                    <div class="social">
+                        <i class="bi bi-facebook"></i>
+                        <i class="bi bi-instagram"></i>
+                        <i class="bi bi-linkedin"></i>
+                    </div>
+            
+                </div>
+            </div>
+        
+  <div class="col-12 col-md-6 col-lg-4">
+    <div class="team-card">
+            
+    <img src="image/myat.jpg" class="team-img">
+            
+    <div class="name">Myat Min Thit</div>
+      <div class="role"><p>"Created the navigation bar, wrote multiple sections of pages and making sure of responsiveness."</p></div>
+            
+        <div class="social">
+          <i class="bi bi-facebook"></i>
+          <i class="bi bi-instagram"></i>
+          <i class="bi bi-linkedin"></i>
+        </div>
+            
+    </div>
+  </div>
+        
+  <div class="col-12 col-md-6 col-lg-4">
+    <div class="team-card">
+            
+      <img src="image/kaung.jpg" class="team-img">
+            
+      <div class="name">Kaung Satt Hein</div>
+        <div class="role">"Participate in creating the footer, and design some sections of the webpage."</div>
+            
+          <div class="social">
+            <i class="bi bi-facebook"></i>
+            <i class="bi bi-instagram"></i>
+            <i class="bi bi-linkedin"></i>
+          </div>
+            
+        </div>
+      </div>
+        
+    </div>
+    
+  </div>
+    
+  <!-- ================= MISSION VISION GOAL SECTION ================= -->
+    
+  <section class="purpose-section py-5">
+    
+    <div class="container">
+    
+    
+    
+        <!-- Mission -->
+        <div class="purpose-box mb-5">
+        <div class="row align-items-center">
+    
+            <div class="col-lg-2 text-center">
+            <i class="bi bi-bullseye purpose-icon"></i>
+            </div>
+    
+            <div class="col-lg-10">
+            <h2 class="purpose-title">Mission</h2>
+    
+            <p class="purpose-text">
+                Our mission is to educate communities about proper waste management
+                and encourage people to reduce pollution through the 3Rs:
+                Reduce, Reuse, and Recycle. We aim to inspire positive environmental
+                actions and create awareness about sustainable living.
+            </p>
+            </div>
+    
+        </div>
+        </div>
+    
+        <!-- Vision -->
+        <div class="purpose-box mb-5">
+        <div class="row align-items-center flex-lg-row-reverse">
+    
+            <div class="col-lg-2 text-center">
+            <i class="bi bi-eye purpose-icon"></i>
+            </div>
+    
+            <div class="col-lg-10">
+            <h2 class="purpose-title">Vision</h2>
+    
+            <p class="purpose-text">
+                Our vision is to build a cleaner, greener, and healthier environment
+                where people work together to protect the planet and future generations
+                through sustainable waste management practices.
+            </p>
+            </div>
+    
+        </div>
+        </div>
+    
+        <!-- Goal -->
+        <div class="purpose-box">
+        <div class="row align-items-center">
+    
+            <div class="col-lg-2 text-center">
+            <i class="bi bi-flag purpose-icon"></i>
+            </div>
+    
+            <div class="col-lg-10">
+            <h2 class="purpose-title">Goal</h2>
+    
+            <p class="purpose-text">
+                Our goal is to encourage teenagers and communities to take action
+                against waste pollution by practicing eco-friendly habits and reducing
+                single-use plastics in daily life.
+            </p>
+            </div>
+    
+        </div>
+        </div>
+    
+    </div>
+    
+  </section>
+ 
+
+  <!-- footer -->
+  <div class="container-fluid bg-black text-white px-5 py-3">
+ 
+    <div class="row mt-3">
+ 
+      <!-- Left Side -->
+      <div class="col-md-4">
+ 
+        <h1>Zephra</h1>
+ 
+        <p class="inria-serif-regular">
+          Smart waste management solutions for sustainable cities.
+          Turning waste problems into opportunities through technology
+          and community action.
+        </p>
+ 
+        <p class="inria-serif-regular">
+          <i class="bi bi-geo-alt-fill px-1"></i>
+          123 Green Street, Eco City 45678
+        </p>
+ 
+        <p class="inria-serif-regular">
+          <i class="bi bi-telephone-fill px-1"></i>
+          +1 (555) 123-4567
+        </p>
+ 
+        <p class="inria-serif-regular">
+          <i class="bi bi-envelope px-1"></i>
+          zephra-waste_management.com
+        </p>
+ 
+      </div>
+ 
+      <!-- Quick Links -->
+      <div class="col-md-2 footer_session">
+ 
+        <h5 class="text-warning inria-serif-regular">Quick Links</h5>
+ 
+        <a href="index.html"><p class="inria-serif-regular">Home</p></a>
+        <a href="learn.html"><p class="inria-serif-regular">Learn</p></a>
+        <a href="aboutus.html"><p class="inria-serif-regular">About us</p></a>
+        <a href="contact.html"><p class="inria-serif-regular">Contact us</p></a>
+        <a href="solution.html"><p class="inria-serif-regular">Solutions</p></a>
+ 
+      </div>
+ 
+      <!-- Resources -->
+      <div class="col-md-3 footer_session">
+ 
+        <h5 class="text-warning inria-serif-regular">Resources</h5>
+ 
+        <a href="#"><p class="inria-serif-regular">Waste Segregation</p></a>
+        <a href="#"><p class="inria-serif-regular">Recycling Programs</p></a>
+        <a href="#"><p class="inria-serif-regular">Composting</p></a>
+        <a href="#"><p class="inria-serif-regular">Reduce Plastic</p></a>
+        <a href="#"><p class="inria-serif-regular">Clean-up Campaigns</p></a>
+ 
+      </div>
+ 
+            <!-- Support -->
+      <div class="col-md-3 footer_session">
+ 
+        <h5 class="text-warning inria-serif-regular">Support</h5>
+ 
+        <a href="#"><p class="inria-serif-regular">Help Center</p></a>
+        <a href="#"><p class="inria-serif-regular">Contact Support</p></a>
+        <a href="#FAQ"><p class="inria-serif-regular">FAQ</p></a>
+ 
+        <a href="https://www.facebook.com/"><i class="bi bi-facebook fs-3 me-3"></i></a>
+        <a href="https://web.telegram.org/"><i class="bi bi-telegram fs-3 me-3"></i></a>
+        <a href="https://www.instagram.com/"><i class="bi bi-instagram fs-3"></i></a>
+ 
+      </div>
+ 
+    </div>
+ 
+    <hr>
+ 
+    <!-- Bottom Footer -->
+    <div class="row">
+ 
+      <div class="col-md-6">
+        <p class="inria-serif-regular">© 2026 Waste Management Project</p>
+      </div>
+ 
+      <div class="col-md-6 text-md-end">
+ 
+        <a href="#"><span class="me-3 inria-serif-regular">Privacy Policy</span></a>
+        <a href="#"><span class="me-3 inria-serif-regular">Terms of Service</span></a>
+        <a href="#"><span class="inria-serif-regular">Cookie Policy</span></a>
+ 
+      </div>
+ 
+    </div>
+ 
+  </div>
+<!--Bootstrap JS Link-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+ 
+</body>
+</html>
